@@ -23,7 +23,7 @@
             <div class="row">
               <h2 class="text-dark-green">
                 <q-icon name="local_library"></q-icon>
-                課程概要
+                活動概要
               </h2>
             </div>
             <div class="row flex flex-start-center long-padded">
@@ -83,27 +83,6 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div class="row long-padded">
-              <h2 class="text-dark-green">
-                <q-icon name="language"></q-icon>取消政策
-              </h2>
-              <p class="text-dark-gray small bold">
-                如欲申請退款，請電郵至本平台之客服信箱
-                <a id="colearna" href="mailto:contact@colearna.co"
-                  >contact@colearna.co</a
-                >
-                申請，並檢附合理退款原因，經本公司審查後，本公司得依照下列規定，退還全部/部份已付款項（但退款金額需扣除轉帳或信用卡手續費）：<br />
-                尚未開課課程之退款條件：<br />
-                (1) 於開課日七日（含當日）前，得退還該課程金額之百分之百。<br />
-                (2) 於開課日五日（含當日）前，得退還該課程金額之百分之七十。<br />
-                (3) 於開課日三日（含當日）前，得退還該課程金額之百分之五十。<br />
-                (4)
-                若您用戶錯過上述所列的退款期限，不予退款，但平台將贈送相同課堂價格面額（扣除行政費後）之折價券供下次於平台購課使用。<br />
-                詳情請參閱常見問題之「Q: 我要申請退款，平台將如何處理？」<br />
-                如課堂於開課前未達成班人數（包括單次課及超過一堂課的課程，即「多次課」），平台將提前通知。如課程屬單次課，將安排退款；如課程屬多次課，則安排退款不成班之該次課堂款項（用戶之購買價格除以課堂數目），用戶亦可申請退還餘下未上課堂之費用。如學生遲到/缺席且未有於課堂開始前至少一小時告知，恕未能退還該堂款項。如課堂開始後15分鐘出席學生數目仍未達成班人數，老師得決定是否取消課堂，已出席之學生將獲退還該堂費用。
-              </p>
-            </div>
-          </div>
         </div>
         <div class="row padded flex flex-center">
           <q-form>
@@ -181,7 +160,7 @@
         <div class="row padded">
           <div class="col-12">
             <h4 class="text-left text-dark-green">
-              <q-icon name="maps_home_work"></q-icon>開辦課程
+              <q-icon name="maps_home_work"></q-icon>開辦活動
             </h4>
             <p
               class="text-dark-gray fluid text-left"
@@ -290,7 +269,7 @@
         </q-card>
       </div>
       <div class="col col-md-9 col-sm-8 col-xs-12">
-        <q-card class="editC-card" v-show="action == '新增課程'">
+        <q-card class="editC-card" v-show="action == '新增活動'">
           <div class="col flex-col flex-center">
             <q-form class="fluid">
               <div class="row flex flex-center">
@@ -311,7 +290,7 @@
               </div>
               <q-form class="flex flex-start-center fluid row">
                 <label class="text-gray margin"
-                  >課程Id <span class="red star">*</span></label
+                  >活動Id <span class="red star">*</span></label
                 >
                 <q-input
                   class="margin"
@@ -319,33 +298,33 @@
                   outlined
                   rounded
                   v-model="newCid"
-                  placeholder="課程Id"
+                  placeholder="活動Id"
                 >
                 </q-input>
               </q-form>
               <q-form class="flex flex-start-center fluid row">
                 <label class="text-gray margin"
-                  >課程名稱 <span class="red star">*</span></label
+                  >活動名稱 <span class="red star">*</span></label
                 >
                 <q-input
                   class="margin"
                   outlined
                   rounded
                   v-model="newTitle"
-                  placeholder="課程名稱"
+                  placeholder="活動名稱"
                 >
                 </q-input>
               </q-form>
               <q-form class="flex flex-start-center fluid row">
                 <label class="text-gray margin"
-                  >課程封面圖網址 <span class="red star">*</span></label
+                  >活動封面圖網址 <span class="red star">*</span></label
                 >
                 <q-input
                   class="margin"
                   outlined
                   rounded
                   v-model="newClassImg"
-                  placeholder="課程封面圖網址"
+                  placeholder="活動封面圖網址"
                 >
                 </q-input>
 
@@ -353,7 +332,7 @@
               </q-form>
               <q-form>
                 <label class="text-gray margin inline-block"
-                  >中文課程說明 <span class="red star">*</span></label
+                  >中文活動說明 <span class="red star">*</span></label
                 >
                 <q-input
                   type="textarea"
@@ -361,13 +340,13 @@
                   outlined
                   rounded
                   v-model="newZh"
-                  placeholder="中文課程說明"
+                  placeholder="中文活動說明"
                 >
                 </q-input>
               </q-form>
               <q-form>
                 <label class="text-gray margin inline-block"
-                  >英文課程說明</label
+                  >英文活動說明</label
                 >
                 <q-input
                   type="textarea"
@@ -375,7 +354,7 @@
                   outlined
                   rounded
                   v-model="newEn"
-                  placeholder="英文課程說明"
+                  placeholder="英文活動說明"
                 >
                 </q-input>
               </q-form>
@@ -420,14 +399,14 @@
               </q-form>
               <q-form>
                 <label class="text-gray margin"
-                  >課程地點 <span class="red star">*</span></label
+                  >活動地點 <span class="red star">*</span></label
                 >
                 <q-input
                   class="margin"
                   outlined
                   rounded
                   v-model="newLocation"
-                  placeholder="課程地點"
+                  placeholder="活動地點"
                 >
                 </q-input>
               </q-form>
@@ -438,32 +417,32 @@
                 <q-checkbox label="包班" />
               </q-form>
               <q-form>
-                <label class="text-gray margin inline-block">課程地址</label>
+                <label class="text-gray margin inline-block">活動地址</label>
                 <q-input
                   class="margin"
                   outlined
                   rounded
                   v-model="newAddr"
-                  placeholder="課程地址"
+                  placeholder="活動地址"
                 >
                 </q-input>
               </q-form>
               <q-form>
                 <label class="text-gray margin inline-block"
-                  >課程連結(僅線上課需填)</label
+                  >活動連結(僅線上課需填)</label
                 >
                 <q-input
                   class="margin"
                   outlined
                   rounded
                   v-model="newHref"
-                  placeholder="課程連結(僅線上課需填)"
+                  placeholder="活動連結(僅線上課需填)"
                 >
                 </q-input>
               </q-form>
               <q-form>
                 <div class="flex-col fluid flex-start">
-                  <label class="text-gray margin">課程日期/時間</label>
+                  <label class="text-gray margin">活動日期/時間</label>
                   <label
                     class="text-gray margin"
                     v-for="(c, k) in newClasses"
@@ -610,7 +589,7 @@
                 4
               </h2>
               <p class="text-gray inline-flex flex-end-center fluid">
-                已開課程
+                已開活動
               </p>
             </div>
           </div>
@@ -682,7 +661,7 @@
             </div>
           </div>
 
-          <div class="row flex flex-center" v-show="op == '課程一覽'">
+          <div class="row flex flex-center" v-show="op == '活動一覽'">
             <q-card class="my-card-small" v-for="(r, k) in classes" :key="k">
               <q-img
                 class="clickable"
@@ -891,822 +870,15 @@
               <h4 class="text-dark-green">21,000TWD</h4>
             </div>
           </div>
-
-          <q-separator style="margin-bottom: 1em" />
-
-          <q-list class="no-margin no-padding">
-            <q-item
-              class="flex flex-start-center no-margin no-padding"
-              v-show="myAccounts.length == 0"
-            >
-              您目前尚末設定銀行帳戶
-            </q-item>
-            <q-item
-              class="flex flex-start-center no-margin"
-              clickable
-              v-for="(a, l) in myAccounts"
-              :key="l"
-              @click="editAcc(l)"
-            >
-              帳戶{{ l + 1 }}：{{ a.bank_name }} {{ a.bank_code }} (帳號:
-              {{ a.bank_account || '待設定' }})
-            </q-item>
-            <q-item
-              clickable
-              @click="
-                myAccounts.push({
-                  bank_name: '新帳戶',
-                });
-                editAcc(myAccounts.length - 1);
-              "
-            >
-              <h6 class="text-dark-green">
-                <q-icon name="add"></q-icon>
-                <span class="text-underline">新增銀行帳戶</span>
-              </h6>
-            </q-item>
-          </q-list>
-
-          <q-card
-            class="teacher-bank-card flex-col flex-start-center"
-            v-if="focusAcc != Infinity"
-          >
-            <q-form class="flex flex-start-center fluid">
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_name"
-                  placeholder="例：中華郵政"
-                ></q-input>
-              </div>
-
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >戶名<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="account_name"
-                  placeholder="開戶的真實姓名"
-                ></q-input>
-              </div>
-            </q-form>
-
-            <div class="small-space"></div>
-
-            <q-form class="flex flex-start-center fluid">
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行代碼<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_code"
-                  placeholder="例：700"
-                ></q-input>
-              </div>
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行帳號<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_account"
-                  placeholder="銀行帳號"
-                ></q-input>
-              </div>
-            </q-form>
-
-            <div class="row padded flex flex-end-center">
-              <q-btn
-                class="margin"
-                rounded
-                outline
-                color="grey"
-                icon="cancel"
-                @click="cancelAcc()"
-                >取消</q-btn
-              >
-
-              <q-btn
-                class="margin"
-                rounded
-                color="orange"
-                icon="save"
-                @click="saveAcc(focusAcc)"
-                >儲存銀行帳戶</q-btn
-              >
-
-              <q-btn
-                class="margin"
-                rounded
-                color="red"
-                icon="delete"
-                @click="deleteAcc(focusAcc)"
-                >刪除此帳戶</q-btn
-              >
-            </div>
-          </q-card>
-
-          <q-separator style="margin-bottom: 1em" />
-
-          <div class="row fluid long-padded flex flex-center">
-            <div class="col-12 flex flex-col flex-start-center">
-              <h4 class="text-dark-green fluid text-left">收入管理</h4>
-
-              <q-form class="fluid flex flex-start-center">
-                <q-select
-                  outlined
-                  v-model="myMonth"
-                  :options="months"
-                  :dense="dense"
-                  :options-dense="denseOpts"
-                  style="max-width: 420px; font-size: 32px"
-                >
-                  <template v-slot:prepend>
-                    <q-icon name="event" />
-                    <q-separator
-                      vertical
-                      style="margin-left: 0.6em; margin-right: 1em"
-                    />
-                    選擇月份
-                  </template>
-                </q-select>
-              </q-form>
-            </div>
-
-            <div class="small-space"></div>
-
-            <div id="teacher-table" class="fluid">
-              <q-table
-                class="fluid"
-                flat
-                bordered
-                rounded
-                separator="cell"
-                :rows="rows1"
-                :columns="columns1"
-              >
-              </q-table>
-            </div>
-          </div>
-        </div>
-
-        <div class="teacher-profile-card-2" v-if="action == '電子勞務'">
-          <h4 class="text-dark-green">電子勞務</h4>
-          <h6 class="text-dark-gray no-margin no-padding">基本資料</h6>
-          <q-list class="no-margin no-padding">
-            <q-item
-              class="flex flex-start-center no-margin no-padding"
-              v-show="myAccounts.length == 0"
-            >
-              您目前尚末設定銀行帳戶
-            </q-item>
-            <q-item
-              class="flex flex-start-center no-margin"
-              clickable
-              v-for="(a, l) in myAccounts"
-              :key="l"
-              @click="editAcc(l)"
-            >
-              帳戶{{ l + 1 }}：{{ a.bank_name }} {{ a.bank_code }} (帳號:
-              {{ a.bank_account || '待設定' }})
-            </q-item>
-            <q-item
-              clickable
-              @click="
-                myAccounts.push({
-                  bank_name: '新帳戶',
-                });
-                editAcc(myAccounts.length - 1);
-              "
-            >
-              <h6 class="text-dark-green">
-                <q-icon name="add"></q-icon>
-                <span class="text-underline">新增銀行帳戶</span>
-              </h6>
-            </q-item>
-          </q-list>
-
-          <q-card
-            class="teacher-bank-card flex-col flex-start-center"
-            v-if="focusAcc != Infinity"
-          >
-            <q-form class="flex flex-start-center fluid">
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_name"
-                  placeholder="例：中華郵政"
-                ></q-input>
-              </div>
-
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >戶名<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="account_name"
-                  placeholder="開戶的真實姓名"
-                ></q-input>
-              </div>
-            </q-form>
-
-            <div class="small-space"></div>
-
-            <q-form class="flex flex-start-center fluid">
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行代碼<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_code"
-                  placeholder="例：700"
-                ></q-input>
-              </div>
-              <div style="display: inline-block; width: 45%; max-width: 340px">
-                <label class="text-dark-gray margin"
-                  >銀行帳號<span class="red star relative">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  outlined
-                  rounded
-                  v-model="bank_account"
-                  placeholder="銀行帳號"
-                ></q-input>
-              </div>
-            </q-form>
-
-            <div class="row padded flex flex-end-center">
-              <q-btn
-                class="margin"
-                rounded
-                outline
-                color="grey"
-                icon="cancel"
-                @click="cancelAcc()"
-                >取消</q-btn
-              >
-
-              <q-btn
-                class="margin"
-                rounded
-                color="orange"
-                icon="save"
-                @click="saveAcc(focusAcc)"
-                >儲存銀行帳戶</q-btn
-              >
-
-              <q-btn
-                class="margin"
-                rounded
-                color="red"
-                icon="delete"
-                @click="deleteAcc(focusAcc)"
-                >刪除此帳戶</q-btn
-              >
-            </div>
-          </q-card>
-
-          <q-separator style="margin-bottom: 1em" />
-
-          <q-card class="teacher-bank-card flex-col flex-start-center">
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-dark-gray margin"
-                >戶名<span class="red star relative">*</span></label
-              >
-              <q-input
-                class="margin"
-                style="display: inline-block; width: 100%"
-                outlined
-                rounded
-                v-model="account_name"
-                placeholder="必須等同銀行帳戶的名字"
-              ></q-input>
-            </q-form>
-
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-dark-gray margin"
-                >身分證字號<span class="red star relative">*</span></label
-              >
-              <q-input
-                class="margin"
-                style="display: inline-block; width: 100%"
-                outlined
-                rounded
-                v-model="id_number"
-                placeholder="身分證字號或居留證/護照號碼"
-              ></q-input>
-            </q-form>
-
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-dark-gray margin"
-                >聯絡電話<span class="red star relative">*</span></label
-              >
-              <q-input
-                class="margin"
-                style="display: inline-block; width: 100%"
-                outlined
-                rounded
-                v-model="myPhone"
-                placeholder="手機號碼"
-              ></q-input>
-            </q-form>
-
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-dark-gray margin"
-                >戶籍地址<span class="red star relative">*</span></label
-              >
-              <q-input
-                class="margin"
-                style="display: inline-block; width: 100%"
-                outlined
-                rounded
-                v-model="myAddr"
-                placeholder="戶籍地址"
-              ></q-input>
-            </q-form>
-
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-dark-gray margin fluid"
-                >通訊地址<span class="red star relative">*</span></label
-              >
-
-              <q-checkbox v-model="sameAddr" label="同戶籍地址" />
-
-              <q-input
-                class="margin"
-                style="display: inline-block; width: 100%"
-                outlined
-                rounded
-                v-model="myContactAddr"
-                placeholder="通訊地址"
-              ></q-input>
-            </q-form>
-
-            <div class="row padded flex flex-end-center">
-              <q-btn
-                size="lg"
-                rounded
-                color="orange"
-                icon="save"
-                @click="saveAll()"
-                >儲存</q-btn
-              >
-            </div>
-
-            <q-separator style="margin-bottom: 1em" />
-
-            <div class="row flex fluid padded">
-              <div class="col-6 flex flex-col flex-start">
-                <p class="text-dark-gray">身份證正面</p>
-                <q-img
-                  :src="id_card_front"
-                  style="background-color: #eee"
-                ></q-img>
-
-                <q-form class="q-gutter-md">
-                  <q-file
-                    filled
-                    bottom-slots
-                    label=".png / .jpg"
-                    accept="image/png, image/jpeg"
-                    @input="uploadIdCardFront($event)"
-                  >
-                    <template v-slot:prepend>
-                      <q-icon name="cloud_upload" @click.stop.prevent />
-                    </template>
-                    <template v-slot:append>
-                      <q-icon
-                        name="close"
-                        @click.stop.prevent="model = null"
-                        class="cursor-pointer"
-                      />
-                    </template>
-
-                    <template v-slot:hint> 請上傳圖檔 </template>
-                  </q-file>
-                </q-form>
-              </div>
-              <div class="col-6 flex flex-col flex-start">
-                <p class="text-dark-gray">身份證反面</p>
-                <q-img
-                  :src="id_card_back"
-                  style="background-color: #eee"
-                ></q-img>
-
-                <q-form class="q-gutter-md">
-                  <q-file
-                    filled
-                    bottom-slots
-                    label=".png / .jpg"
-                    accept="image/png, image/jpeg"
-                    @input="uploadIdCardBack($event)"
-                  >
-                    <template v-slot:prepend>
-                      <q-icon name="cloud_upload" @click.stop.prevent />
-                    </template>
-                    <template v-slot:append>
-                      <q-icon
-                        name="close"
-                        @click.stop.prevent="model = null"
-                        class="cursor-pointer"
-                      />
-                    </template>
-
-                    <template v-slot:hint> 請上傳圖檔 </template>
-                  </q-file>
-                </q-form>
-              </div>
-            </div>
-
-            <q-separator style="margin-bottom: 1em" />
-
-            <div class="row fluid padded flex flex-center">
-              <div class="col-12 flex flex-col flex-start-center">
-                <h4 class="text-dark-green fluid text-left">電子勞務管理</h4>
-
-                <q-form class="fluid flex flex-start-center">
-                  <q-select
-                    outlined
-                    v-model="myMonth"
-                    :options="months"
-                    :dense="dense"
-                    :options-dense="denseOpts"
-                    style="max-width: 420px; font-size: 32px"
-                  >
-                    <template v-slot:prepend>
-                      <q-icon name="event" />
-                      <q-separator
-                        vertical
-                        style="margin-left: 0.6em; margin-right: 1em"
-                      />
-                      選擇月份
-                    </template>
-                  </q-select>
-                </q-form>
-              </div>
-            </div>
-            <div id="teacher-table" class="fluid">
-              <q-table
-                class="fluid"
-                flat
-                bordered
-                rounded
-                separator="cell"
-                :rows="rows"
-                :columns="columns"
-              >
-              </q-table>
-            </div>
-          </q-card>
         </div>
       </div>
     </div>
-
-    <!--
-    <div class="row long-padded" v-else>
-      <h2 class="text-dark-green fluid">老師後台</h2>
-      <div class="col-2 col-sm-4 col-md-3 col-xs-12 flex-col flex-start-center">
-        <q-select v-model="action" :options="['教師簡介', '課程清單', '新增課程']" label="請選擇一項功能" style="width: 90%"></q-select>
-      </div>
-      <div class="col-10 col-sm-8 col-md-9 col-xs-12 flex-col flex-center">
-        <q-card class="profile-card" v-if="action == '教師簡介'">
-          <h4 class="text-left text-dark-green fluid">教師簡介</h4>
-          <div class="row">
-            <div class="col-6 col-md-6 col-sm-8 col-xs-8 flex-col">
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">真實姓名<span class="red star">*</span></label>
-                <q-input class="margin" v-model="myName" placeholder="姓名*" style="max-width: 300px;" @focus="focusDate = []; focusMyDate = false">
-                </q-input>
-              </q-form>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin inline-block">簡介<span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" v-model="newDes" placeholder="簡介" style="max-width: 300px;" @focus="focusMyDate = true" @click="focusMyDate = true">
-                </q-input>
-              </q-form>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin inline-block">教學理念<span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" v-model="newThought" placeholder="教學理念" style="max-width: 300px;">
-                </q-input>
-              </q-form>
-              <q-input v-model="newCer" placeholder="專業證照(選填)" style="width: 280px;">
-                <template v-slot:prepend>
-                  <q-icon name="add" color="green" />
-                </template>
-                <template v-slot:append>
-                  <q-btn color="secondary" @click="addCer()">新增</q-btn>
-                </template>
-              </q-input>
-              <q-list>
-                <q-item v-for= "(c, k) in newCertifications || []" :key="k">
-                  <div class="flex margin">{{c}}</div>
-                  <div class="filler"></div>
-                  <q-btn size="xs margin" color="red" @click="removeCer(k)">
-                    <q-icon name="delete"></q-icon>
-                  </q-btn>
-                </q-item>
-              </q-list>
-            </div>
-            <div class="filler"></div>
-            <div class="col-6 col-md-4 col-sm-4 col-xs-4 flex flex-col flex-start-center">
-              <img class="big avatar" :src = "myImg || myPhotoURL" />
-              <q-btn unelevated class="no-border no-bg text-dark-green" @click="editP = true">編輯</q-btn>
-              <q-form class="flex flex-start-center fluid" v-show='editP'>
-                <q-file color="teal" filled label="上傳大頭貼" accept="image/*" @input="uploadImage($event)" name="photoURL">
-                  <template v-slot:prepend>
-                    <q-icon name="cloud_upload" />
-                  </template>
-                </q-file>
-              </q-form>
-            </div>
-          </div>
-          <q-form>
-            <q-btn unelevated rounded color="blue" @click="previewProfile()" size="lg">預覽</q-btn>
-            <q-btn unelevated rounded class="margin  or-back text-white" @click="submit()" size="lg">更新資料</q-btn>
-            <q-btn unelevated rounded class="margin or-border text-orange" @click="cancel()" size="lg">取消</q-btn>
-          </q-form>
-        </q-card>
-        <q-card class="editC-card" v-if = "action == '課程清單' && (editC !== '')">
-          <div class="col flex-col flex-center">
-            <q-form class="fluid">
-              <div class="row flex flex-center">
-                <div class="col flex flex-col">
-                  <q-img class="small-img margin" v-show="newClassImg" :src="newClassImg"></q-img>
-                  <div class="row flex flex-center">
-                    <q-img class="avatar margin" v-show="myImg" :src="myImg"></q-img>
-                  </div>
-                </div>
-              </div>
-
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">課程名稱
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newTitle" placeholder="課程名稱">
-                </q-input>
-              </q-form>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">課程封面圖網址
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newClassImg" placeholder="課程封面圖網址">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">中文課程說明
-                  <span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newZh" placeholder="中文課程說明">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">英文課程說明</label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newEn" placeholder="英文課程說明">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">中文教師簡介
-                  <span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newT_Zh" placeholder="中文教師簡介">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">英文教師簡介</label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newT_En" placeholder="英文教師簡介">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">標籤</label>
-                <q-input class="margin" outlined rounded v-model="newTags" placeholder="標籤">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">課程地點
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newLocation" placeholder="課程地點">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">課程地址</label>
-                <q-input class="margin" outlined rounded v-model="newAddr" placeholder="課程地址">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">課程連結(僅線上課需填)</label>
-                <q-input class="margin" outlined rounded v-model="newHref" placeholder="課程連結(僅線上課需填)">
-                </q-input>
-              </q-form>
-              <q-form>
-                <div class="flex-col fluid flex-start">
-                  <label class="text-gray margin">課程日期/時間</label>
-                  <label class="text-gray margin" v-for="(c,k) in newClasses" :key="k">
-                    {{ c.d }} {{ c.t }}
-                    <q-btn class="margin" rounded @click="removeDateTime(k)" color="red" icon="event_available">移除</q-btn>
-                  </label>
-                  <label class="text-gray margin">{{newDate}} {{newTime}}  ~ {{newEndTime}}
-                    <q-btn class="margin" rounded @click="addDateTime()" color="orange" icon="event_available">加入</q-btn>
-                  </label>
-                </div>
-                <div class="q-gutter-md row items-start">
-                  <q-date v-model="newDate" color="purple" />
-                  <q-time v-model="newTime" color="green" />
-                  <q-time v-model="newEndTime" color="blue" />
-                </div>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">最低人數</label>
-                <q-input type="number" class="margin" outlined rounded v-model="newMin" placeholder="最低人數" step="1" min="1">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">最高人數</label>
-                <q-input type="number" class="margin" outlined rounded v-model="newMax" placeholder="最高人數" step="1" min="1">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">原價</label>
-                <q-input type="text" class="margin" outlined rounded v-model="newOldPrice" placeholder="原價" hint="原價">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">原價</label>
-                <q-input type="text" class="margin" outlined rounded v-model="newNewPrice" placeholder="售價" hint="售價">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">顯示價格
-                  <span class="red star">*</span></label>
-                <q-input type="text" class="margin" outlined rounded v-model="newPrice" placeholder="顯示價格">
-                </q-input>
-              </q-form>
-            </q-form>
-            <div class="row flex flex-center">
-              <q-btn color="primary" class="margin" rounded @click="updateC(editC)"><q-icon name="update"></q-icon>更新</q-btn>
-              <q-btn color="blue" class="margin" rounded @click="copyC()"><q-icon name="content_copy"></q-icon>複製</q-btn>
-              <q-btn color="red" class="margin" rounded @click="deleteC(editC)"><q-icon name="delete"></q-icon>刪除</q-btn>
-            </div>
-          </div>
-        </q-card>
-        <q-list v-show = "action == '課程清單'">
-          <q-item v-for="(i,k) in classes" :key="k">
-            <a class="fluid text-center flex flex-start-center text-black" @click="startEditC(i.id)" :class="{disabled: i.tid !== uid}">
-              <img class="avatar round margin" :src="i.img" :alt="i.title" />
-              {{i.title}}
-            </a>
-          </q-item>
-        </q-list>
-        <q-card class="editC-card" v-show = "action == '新增課程'">
-          <div class="col flex-col flex-center">
-            <q-form class="fluid">
-              <div class="row flex flex-center">
-                <div class="col flex flex-col">
-                  <q-img class="small-img margin" v-show="newClassImg" :src="newClassImg"></q-img>
-                  <div class="row flex flex-center">
-                    <q-img class="avatar margin" v-show="myImg" :src="myImg"></q-img>
-                  </div>
-                </div>
-              </div>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">課程Id
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newCid" placeholder="課程Id">
-                </q-input>
-              </q-form>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">課程名稱
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newTitle" placeholder="課程名稱">
-                </q-input>
-              </q-form>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin">課程封面圖網址
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newClassImg" placeholder="課程封面圖網址">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">中文課程說明
-                  <span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newZh" placeholder="中文課程說明">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">英文課程說明</label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newEn" placeholder="英文課程說明">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">中文教師簡介
-                  <span class="red star">*</span></label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newT_Zh" placeholder="中文教師簡介">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">英文教師簡介</label>
-                <q-input type="textarea" class="margin" outlined rounded v-model="newT_En" placeholder="英文教師簡介">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">標籤</label>
-                <q-input class="margin" outlined rounded v-model="newTags" placeholder="標籤">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin">課程地點
-                  <span class="red star">*</span></label>
-                <q-input class="margin" outlined rounded v-model="newLocation" placeholder="課程地點">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">課程地址</label>
-                <q-input class="margin" outlined rounded v-model="newAddr" placeholder="課程地址">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">課程連結(僅線上課需填)</label>
-                <q-input class="margin" outlined rounded v-model="newHref" placeholder="課程連結(僅線上課需填)">
-                </q-input>
-              </q-form>
-              <q-form>
-                <div class="flex-col fluid flex-start">
-                  <label class="text-gray margin">課程日期/時間</label>
-                  <label class="text-gray margin" v-for="(c,k) in newClasses" :key="k">
-                    {{ c.d }} {{ c.t }}
-                    <q-btn class="margin" rounded @click="removeDateTime(k)" color="red" icon="event_available">移除</q-btn>
-                  </label>
-                  <label class="text-gray margin">{{newDate}} {{newTime}}  ~ {{newEndTime}}
-                    <q-btn class="margin" rounded @click="addDateTime()" color="orange" icon="event_available">加入</q-btn>
-                  </label>
-                </div>
-                <div class="q-gutter-md row items-start">
-                  <q-date v-model="newDate" color="purple" />
-                  <q-time v-model="newTime" color="green" />
-                  <q-time v-model="newEndTime" color="blue" />
-                </div>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">最低人數</label>
-                <q-input type="number" class="margin" outlined rounded v-model="newMin" placeholder="最低人數" step="1" min="1">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">最高人數</label>
-                <q-input type="number" class="margin" outlined rounded v-model="newMax" placeholder="最高人數" step="1" min="1">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">原價</label>
-                <q-input type="text" class="margin" outlined rounded v-model="newOldPrice" placeholder="原價" hint="原價">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">原價</label>
-                <q-input type="text" class="margin" outlined rounded v-model="newNewPrice" placeholder="售價" hint="售價">
-                </q-input>
-              </q-form>
-              <q-form>
-                <label class="text-gray margin inline-block">顯示價格
-                  <span class="red star">*</span></label>
-                <q-input type="text" class="margin" outlined rounded v-model="newPrice" placeholder="顯示價格">
-                </q-input>
-              </q-form>
-            </q-form>
-            <div class="row flex flex-center">
-              <q-btn color="blue" class="margin" rounded @click="previewClass()"><q-icon name="preview"></q-icon>預覽</q-btn>
-              <q-btn color="primary" class="margin" rounded @click="newC(newCid)"><q-icon name="upload"></q-icon>送出</q-btn>
-            </div>
-          </div>
-        </q-card>
-      </div>
-    </div> -->
   </q-page>
 </template>
 
 <script lang="ts">
 import convert from 'image-file-resize';
 import { useMeta } from 'quasar';
-import { Meta } from 'components/models';
 
 import {
   QCalendarMonth,
@@ -1771,9 +943,6 @@ export default defineComponent({
     };
     useMeta(metaData);
 
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
 
     const saved = ref(false);
 
@@ -1817,7 +986,7 @@ export default defineComponent({
         t: '教師檔案',
       },
       {
-        t: '新增課程',
+        t: '新增活動',
       },
       {
         t: '教學管理',
@@ -1840,7 +1009,7 @@ export default defineComponent({
         path: '/member_only',
       },
       {
-        t: '我的課程',
+        t: '我的活動',
         path: '/cal',
       },
       {
@@ -1939,7 +1108,7 @@ export default defineComponent({
 
     const rows = [
       {
-        interval: '線上課程｜Koala U. SEL 情緒無尾熊課程',
+        interval: '線上活動｜Koala U. SEL 情緒無尾熊活動',
         predict: 'NT$12,000',
         confirm: 'NT$12,000',
       },
@@ -1948,13 +1117,13 @@ export default defineComponent({
     const columns1 = [
       {
         name: 'name',
-        label: '課程名稱',
+        label: '活動名稱',
         field: 'name',
         align: 'left',
       },
       {
         name: 'income',
-        label: '課程金額',
+        label: '活動金額',
         field: 'income',
         align: 'left',
       },
@@ -1974,11 +1143,11 @@ export default defineComponent({
 
     const rows1 = [
       {
-        name: '線上課程｜Koala U. SEL 情緒無尾熊課程',
+        name: '線上活動｜Koala U. SEL 情緒無尾熊活動',
         income: 'NT$12,000',
         discount: 'NT$12,000',
         collection: 'NT$12,000',
-        details: '線上課程｜Koala U. SEL 情緒無尾熊課程',
+        details: '線上活動｜Koala U. SEL 情緒無尾熊活動',
       },
     ];
 
@@ -1986,8 +1155,8 @@ export default defineComponent({
     const dateType = ref('square');
 
     const role = ref('老師');
-    const op = ref('課程一覽');
-    const filter_act = ref('所有課程');
+    const op = ref('活動一覽');
+    const filter_act = ref('所有活動');
 
     return {
       saved,
@@ -2053,7 +1222,6 @@ export default defineComponent({
       newCertifications,
       myName,
       new_email,
-      meta,
       step,
       slide,
       myKey2,
@@ -2150,13 +1318,13 @@ export default defineComponent({
       const map: any = {};
       var cls = Object.values(this.classes) || [];
       if (cls && cls.length > 0) {
-        if (this.filter_act == '由我開的課程') {
+        if (this.filter_act == '由我開的活動') {
           cls = cls.filter((o: any) => {
             return o.tid == this.uid;
           });
         }
 
-        if (this.filter_act == '已結束課程') {
+        if (this.filter_act == '已結束活動') {
           cls = cls.filter((o: any) => {
             let last = (o.classes || []).at(-1);
             if (!last) {
@@ -2439,7 +1607,7 @@ export default defineComponent({
     },
     startEditC(cid: string) {
       if (cid !== this.uid) {
-        window.alert('這不是您的課程，無法編輯');
+        window.alert('這不是您的活動，無法編輯');
         return;
       }
       const arr = this.classes;
@@ -2485,15 +1653,15 @@ export default defineComponent({
       set(dbRef(db, 'classes/' + cid + '/classes'), this.newClasses);
       set(dbRef(db, 'classes/' + cid + '/title'), this.newTitle).then(() => {
         console.log('class updated!');
-        window.alert('課程資訊已更新');
+        window.alert('活動資訊已更新');
       });
     },
     copyC() {
       // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
-      const newId: string = window.prompt('請輸入複製後的新課程id')!;
+      const newId: string = window.prompt('請輸入複製後的新活動id')!;
       const ks = Object.keys(this.classes);
       if (ks.indexOf(newId) > -1) {
-        window.alert('不能使用已存在的課程Id');
+        window.alert('不能使用已存在的活動Id');
         return;
       } else {
         set(dbRef(db, 'classes/' + newId), {
@@ -2519,7 +1687,7 @@ export default defineComponent({
           max: this.newMax || 10,
         }).then(() => {
           console.log('class copied!');
-          window.alert('課程已複製');
+          window.alert('活動已複製');
           this.startEditC(newId);
         });
       }
@@ -2527,7 +1695,7 @@ export default defineComponent({
     newC(cid: string) {
       const ks = Object.keys(this.classes);
       if (ks.indexOf(cid) > -1) {
-        window.alert('不能使用已存在的課程Id');
+        window.alert('不能使用已存在的活動Id');
         return;
       } else {
         const logs: Array<any> = [...this.logs] || [];
@@ -2538,7 +1706,7 @@ export default defineComponent({
             this.uid +
             ', 名稱: ' +
             this.myName +
-            ')已上傳新課程(id: ' +
+            ')已上傳新活動(id: ' +
             cid +
             ', 名稱: ' +
             this.newTitle +
@@ -2586,7 +1754,7 @@ export default defineComponent({
             ('' + Math.random()).substring(3, 12);
 
           this.newCid = cid_new;
-          window.alert('課程資訊已上傳，等待管理員審核中');
+          window.alert('活動資訊已上傳，等待管理員審核中');
         });
 
         let us = Object.values(this.users);
@@ -2603,7 +1771,7 @@ export default defineComponent({
                 this.me.name +
                 '(' +
                 this.me.email +
-                ') 提出了新課程申請，請至管理員系統查看',
+                ') 提出了新活動申請，請至管理員系統查看',
               route: 'admin',
             });
             set(
@@ -2615,12 +1783,12 @@ export default defineComponent({
             this.$emit(
               'mailto',
               u.email,
-              'Colearna_新課程申請',
+              'Colearna_新活動申請',
               '用戶' +
                 this.me.name +
                 '(' +
                 this.me.email +
-                ') 提出了新課程申請，請至<a href="https://next.colearna.co/admin" target="_blank" rel="noopener norefferer">管理員系統</a>查看'
+                ') 提出了新活動申請，請至<a href="https://next.colearna.co/admin" target="_blank" rel="noopener norefferer">管理員系統</a>查看'
             );
           }
         }

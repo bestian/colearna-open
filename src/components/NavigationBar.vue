@@ -21,9 +21,9 @@
         q-item.text-dark-green.flex.flex-start-center(clickable @click="setRole('家長')", v-show="!inTeacher") 家長
         q-item.text-dark-green.flex.flex-start-center(clickable v-for="(c, l) in me.childern", :key="l", @click="setRole(c.name)", v-show="!inTeacher") 學生{{l+1}}：{{c.name}}
       q-list#op2(v-show="showFil")
-        q-item.text-dark-green.flex.flex-start-center(clickable v-for="(f, j) in ['所有課程', '由我開的課程', '即將開課', '已結束課程']", :key="j", @click="setFil(f)") {{f}}
+        q-item.text-dark-green.flex.flex-start-center(clickable v-for="(f, j) in ['所有活動', '由我開的活動', '即將開始', '已結束活動']", :key="j", @click="setFil(f)") {{f}}
       q-list#op(v-show="showOp")
-        q-item.text-dark-green.flex.flex-start-center(clickable v-for="(o, k) in ['月', '課程一覽']", :key="k", @click="setOp(o)") {{o}}
+        q-item.text-dark-green.flex.flex-start-center(clickable v-for="(o, k) in ['月', '活動一覽']", :key="k", @click="setOp(o)") {{o}}
 .row
   q-btn.no-border.text-gray.margin(unelevated @click="prev()")
     q-icon(name="arrow_back_ios")

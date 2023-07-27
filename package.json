@@ -15,6 +15,7 @@
   "dependencies": {
     "@quasar/extras": "^1.16.4",
     "@quasar/quasar-ui-qcalendar": "^4.0.0-beta.16",
+    "@vue/language-plugin-pug": "^1.8.8",
     "axios": "^1.2.1",
     "detect-inapp": "^1.4.0",
     "firebase": "^10.1.0",
