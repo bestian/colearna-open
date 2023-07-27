@@ -1,6 +1,8 @@
 {
-  "extends": "@quasar/app-vite/tsconfig-preset",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "noImplicitAny": true,
+    "useUnknownInCatchVariables": false,
+    "strictNullChecks": true
   }
 }

@@ -38,9 +38,12 @@ q-layout(view="lHh Lpr lFf")
       router-link.fat-only.relative(to="/admin", v-if="isAdmin") 管理系統
         q-badge(color="red" floating v-show="nn(requests).length > 0") {{nn(requests).length + countClassNotifications() }}
       router-link.fat-only(to="/teacher_board", v-if="isTeacher") 老師後台
-      router-link.fat-only(to="/classes") 課程
-      router-link.fat-only(to="/teachers") 老師
-      router-link.fat-only(to="/news") 最新消息
+
+      router-link.fat-only(to="/profile") 媒合
+      router-link.fat-only(to="/classes") 活動
+      router-link.fat-only(to="/news") 資訊
+      //router-link.fat-only(to="/classes") 課程
+      //router-link.fat-only(to="/teachers") 老師
       // router-link(to="/about") 關於我們
       // router-link(to="/contact") 聯絡我們
       .filler
@@ -76,23 +79,12 @@ q-layout(view="lHh Lpr lFf")
           q-item(to="/member_only", class="flex flex-start-center")
             q-icon(name="hotel_class" size="lg")
             | 會員專區
-          q-item(to="/cart", class="flex flex-start-center")
-            div.inline-flex.relative
-              q-badge(floating, color="orange",text-color="black",:label="me && me.cart && me.cart.length", v-show="me && me.cart && me.cart.length > 0")
-              q-icon(name="shopping_cart" size="lg")
-            | 購物車
           q-item(to="/cal", class="flex flex-start-center")
             q-icon(name="date_range" size="lg")
-            | 我的課程
+            | 我的活動
           q-item(to="/my_fav", class="flex flex-start-center")
             q-icon(name="favorite" size="lg")
             | 我的收藏
-          q-item(to="/my_point", class="flex flex-start-center")
-            q-icon(name="paid" size="lg")
-            | 我的點數
-          // q-item(class="flex flex-center clickable" clickable @click="testEvent()")
-            q-icon(name="send" size="lg")
-            | 測試事件
           q-item
             button#logout(
               @click="logout()"
@@ -111,9 +103,9 @@ q-layout(view="lHh Lpr lFf")
       // q-item(to="/") 家長
       q-item(to="/admin", v-if="isAdmin") 管理員系統
       q-item(to="/teacher_board", v-if="isTeacher") 老師後台
-      q-item(to="/classes") 課程
-      q-item(to="/teachers") 老師
-      q-item(to="/news") 最新消息
+      q-item(to="/profile") 媒合
+      q-item(to="/classes") 活動
+      q-item(to="/news") 資訊
       q-item(to="/about") 關於我們
       q-item(to="/faq") 常見問題FAQ
       // q-item(to="/contact") 聯絡我們
