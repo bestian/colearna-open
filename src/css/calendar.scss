@@ -1,0 +1,22 @@
+.q-calendar-month__day--label__wrapper {
+  min-height: 8em !important;
+  justify-content: center !important;
+  align-items: start !important;
+  padding-top: .4em;
+}
+
+.q-calendar-month__day {
+  /*  ...  */
+}
+
+.q-calendar-month__day.q-current-day .q-calendar__button {
+  /* height: 3em !important; */
+}
+.q-calendar-month__day--content {
+  position: absolute !important;
+  bottom: 0;
+}
+
+.my-event {
+  padding: .2em;
+}

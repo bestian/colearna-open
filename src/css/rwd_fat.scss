@@ -1,0 +1,32 @@
+/* Desktop */
+@media screen and (min-width: 832px) {
+  .thin-only {
+    display: none !important;
+  }
+  .main-text {
+    margin-left: 120px;
+  }
+
+  .navbar a, .navbar a.fat-only {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+
+/* Wide Screen Only */
+@media screen and (min-width: 982px) 
+ {
+  .narrow-only {
+    display: none !important;
+  }
+
+  .thiner-only {
+    display: none !important;
+  }
+
+  .navbar a, .navbar a.fat-only {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

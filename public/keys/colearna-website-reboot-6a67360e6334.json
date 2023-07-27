@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "colearna-website-reboot",
+  "private_key_id": "6a67360e63348653ca3f027739d576bdb5e94a7d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkNFB/cRyk+J6W\nApehQldRa4e6r0E4cA2FIPOt5vwGU9pXo0THxwgd5NTEV9kSJPGnnONi4QKpwFOT\n1Em4focrPI5wXor837j5/UmgD6AUaqDM/KkwOFyyI2kBWW0PWGSSwgc1xRhWDTwG\nJtW0cDzpm1yk7/wNMe3pIme8ciZSC6IIxGsYffBaiD7nzZhgz6vj6sxIPYbENRYp\nTXlH7OVNMiXBtNhUJ7AsMvjMdltpEnqOby5NbArHgCVPbhSEdRU7FfzGiF+YT4lJ\nKXlrPuoP0naMQO08hqmn9kr9xQP1EzdqAlXH9X5A5YFStwGjG5sX6Yimch4QGG6E\nPOx6kH0NAgMBAAECggEABMHiQir6CDqOx6xYDctBAeIiatF4i4TNk3mWrcdnLlzA\nEvFvRPV6gfk3A+BCsQCigrdsLBl2TQo+MaaBI0gBLQrCWrWWg8iMkKuatjk1q1nC\ngmXglf3QC7Y0bN5VJ1Bpi4n1EQT+lUGpZ0k5QFLPJPqEFuBAFnbHnI1LYZ2SCCbz\nrdZZmauo9PUIPm3WN5nC+OovoaT91Lg2P1X82SjeXcUxNFY336oAPL6J79HaF3AK\nN1wTHC+st9oMT7imVZ+JT0euhtRD4YqWaZdfDN7sOUNyGgcHjUoRXP7bnyxIlhuP\nkidEgQFeioMBgMEQF778R9CoVVjca/RjOyFn5CcS4QKBgQDkgV/P0XrAfftRq4em\n4mcUZEj9xYj2l+B9Z3yldX/vk44Z9LeyEnkmQFkzTbhqB4s+zHD+fuODNt656H1N\nMpQIhTiFNXXrQmk4gosP3Sd+2JnPfCB5F6H5L6PQ2W2MeXu8USVGK/mxLa85IqQp\n7x4iSLxieLtAAMBJRv5DLxrZ4QKBgQC39kh4WtSWag0nA27xvPhw2OYfkEW9aZG1\n+V2pXaMwoAy91X5Ir8ikC1zUyHx/Pu2C9Y7kcBVVgeYOtPnfLk11XBstAbaTgZ7/\nwVsmJLH7yn7QUr8h9WsoQQON/ajVKuD4bBs6YS7cKGgy/DDLZG64xvXZw/whqoVA\n16Khq1NArQKBgCB7U4dTG8PpJKSDYZETddusNcP9JG8JP9wTreBHR5xiuTxvUP17\nKsWJOCTW03QfBmgy340NtIGedyKuLcGfgvODHHmzE8QReKuTwvjKUybw20xnNKaB\n+YBWiU7S2YOycShf0JCdB61r9RCGIBfl6b6t4DmPN+7tLGg+Mz6Rn5uBAoGBAKOO\n2MgJGdHR4He7WbycItdSQOf3QcoyPlboqxmWIy1sX2e4lVrSzzTq1VJqHiaUMF+r\nK6x26sDniT+yMCb55+xcQ900FLv5FwCVTREQtx4C39UgfMcYiHl1tE9eI+nDAdpd\nY6f4F82uL1aFWmy7kqW+X3+J/HWCQo9wKSxMQuzRAoGAfCEdCeJWDrEhO6ACoIy/\n6+4QxbtzM1/vh2hROUCRFRvWgSqSbT3lGZGP72JCjOnhP7B2Lr2f1GXkJHRNJuQz\neTucsFEerO11dv/cIT7EpmtVyKO4FqtsF374FdnSi56+NrkFMLzcMm00X1REiSaI\n3gSMPIcz0jPtHjIOAuYlBr0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "colearna-website-reboot@appspot.gserviceaccount.com",
+  "client_id": "118153620612727190923",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/colearna-website-reboot%40appspot.gserviceaccount.com"
+}

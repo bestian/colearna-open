@@ -1,0 +1,90 @@
+/* Tablet and Phone */
+
+@media screen and (max-width: 981px) and (min-width: 832px) {
+  .fater-only {
+    display: none !important;
+  }
+
+  .flex-rwd {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .my-article-card,
+  .my-article-card-2,
+  .my-card {
+    min-width: 45vw;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  .teacher {
+    margin: 1em;
+  }
+
+  .q-table tbody td {
+    max-width: 300px !important;
+    white-space: pre-wrap;
+    overflow: hidden;
+  }
+
+  .p-thin-14 {
+    font-size: 14px !important;
+  }
+
+  .flex-rwd {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .fater-only {
+    display: none !important;
+  }
+
+  .fat-only {
+    display: none !important;
+  }
+
+  #login {
+    padding: 0.375rem 0.45rem;
+    width: 140px !important;
+  }
+
+  .bank-card h6 {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  .q-card.review-card {
+    width: 80vw;
+    min-width: 180px;
+    max-width: 320px;
+  }
+
+  .my-article-card,
+  .my-article-card-2,
+  .my-card {
+    min-width: 50vw;
+    margin: 15px;
+  }
+}
+
+/* Tablet Only */
+@media screen and (min-width: 432px) and (max-width: 1031px) {
+  .thiner-only {
+    display: none !important;
+  }
+}
+
+/* Phone Only */
+@media screen and (max-width: 431px) {
+  .med-only {
+    display: none !important;
+  }
+  .long-padded {
+    padding: 3em 0.8em;
+  }
+}

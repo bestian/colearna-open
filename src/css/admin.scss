@@ -1,0 +1,24 @@
+.q-field__control {
+  margin-left: 1em;
+  max-width: 200px;
+}
+
+.q-btn#ser {
+  margin-left: 1em;
+  max-height: 1.5em !important;
+}
+
+.teacher {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 5em;
+}
+
+.q-stepper__nav {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.q-stepper__nav .q-btn {
+  max-height: 2.6em;
+}
