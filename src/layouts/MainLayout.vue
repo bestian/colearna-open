@@ -1140,3 +1140,66 @@ export default defineComponent({
   },
 });
 </script>
+
+<style type="text/css" scoped>
+  #logout {
+  background-color: #f26e25 !important;
+  border: none;
+  color: white;
+  width: 120px;
+  height: 36px;
+  left: 1208px;
+  top: 41px;
+  border-radius: 40px;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#logut:hover {
+  background-color: #b65e2d !important;
+}
+
+#login {
+  margin-left: 0.8em;
+  background-color: #f26e25 !important;
+  border: none;
+  color: white;
+  width: 4.8em;
+  height: 36px;
+  left: 1208px;
+  top: 41px;
+  border-radius: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#login:hover {
+  background-color: #b65e2d !important;
+}
+</style>

@@ -38,7 +38,7 @@ q-card.welcome-card
         q-item.fluid
           q-avatar(icon="account_circle")
           q-item-section
-            | 舊版網站的帳號資料我們已妥善保存。 2023/06/23起，您可將您原本儲存在共學島平台的資料（如課程、 點數等），整併到新帳號。
+            | 舊版網站的帳號資料我們已妥善保存。2023/11/23起，您可將您原本儲存在共學島平台的資料，部份整併到新帳號。
     .col-md-6.col-sm-6.col-xs-12.flex.flex-col.flex-start-center
       h4.text-dark-green.no-margin 新朋友
       h6.text-dark-green.no-margin 歡迎加入共學島

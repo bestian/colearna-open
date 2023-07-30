@@ -36,14 +36,22 @@ module.exports = configure(function (/* ctx */) {
       'axios',
       'firebase',
       'google-analytics',
-      'mixin',
+      // 'mixin',
       // 'vue-excel-xlsx',
       'vue-gtag',
       // 'cal'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-    css: ['app.scss'],
+    css: [
+      'app.scss', 
+      'font.scss',
+      'calendar.scss',
+      'table.scss',
+      'rwd_fat.scss',
+      'rwd_thin.scss',
+      'rwd_print.scss',
+    ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
