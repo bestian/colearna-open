@@ -15,7 +15,6 @@ q-page(padding)
 import { defineComponent, ref } from 'vue';
 import Step from '../components/core/Step.vue';
 import { useMeta } from 'quasar';
-import { refFromURL } from 'firebase/database';
 export default defineComponent({
   name: 'SandBox',
   components: {
