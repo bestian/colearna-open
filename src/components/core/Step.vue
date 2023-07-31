@@ -15,15 +15,11 @@ q-stepper(v-model="step", ref="stepper", color="primary", animated)
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'NavBar',
   props: {
-    step: {
-      type: Number,
-      default: 1
-    },
     testdata: {
       type: String,
       default: `
@@ -33,15 +29,15 @@ export default defineComponent({
         3.採購的時候，幫忙一起採購
         4.可以到[自然美食DIY網站](https://food.bestian.tw)找食譜
         5.可以自己研發一些料理來嘗試看看
-        6.還可以借圖書館的一些食譜書，學習健康飲食`
-    }
-
-  }
-  setup () {
-      return {
-          step: ref(1)
-    }
-  }
+        6.還可以借圖書館的一些食譜書，學習健康飲食`,
+    },
+  },
+  setup() {
+    const step = ref(1);
+    return {
+      step,
+    };
+  },
 });
 </script>
 
