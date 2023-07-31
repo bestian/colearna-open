@@ -593,7 +593,6 @@ import ClassRequest from '@/components/admin/Admin_ClassRequest.vue';
 import MarqueesList from '@/components/admin/Admin_MarqueesList.vue';
 
 import { useMeta } from 'quasar';
-import { Meta } from 'components/models';
 // import ExampleComponent from 'components/ExampleComponent.vue'
 // import InApp from 'detect-inapp';
 import { defineComponent, ref } from 'vue';
@@ -677,10 +676,6 @@ export default defineComponent({
 
     const obj1: any = {};
     const showClass = ref(obj1);
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
-
     const arr2: any[] = [];
     const newClasses = ref(arr2);
     const newDate = ref('');
@@ -1726,5 +1721,5 @@ export default defineComponent({
 </script>
 
 <style type="text/css">
-  @import '@/css/admin.scss'
+@import '@/css/admin.scss';
 </style>

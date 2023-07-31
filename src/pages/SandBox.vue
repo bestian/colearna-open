@@ -12,18 +12,30 @@ q-page(padding)
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import Step from '../components/core/Step.vue';
+import { useMeta } from 'quasar';
+import { refFromURL } from 'firebase/database';
 export default defineComponent({
   name: 'SandBox',
   components: {
     Step,
   },
-  data() {
-    return {
-      h: 'Happy New',
-      list: [0, 1, 2, 3, 4, 5],
+  setup() {
+    const metaData = {
+      title: '沙盒',
+      noscript: {
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
     };
+    useMeta(metaData);
+    return {
+      h: ref('Happy New'),
+      list: ref([0, 1, 2, 3, 4, 5]),
+    };
+  },
+  mounted() {
+    console.log('mounted');
   },
 });
 </script>
