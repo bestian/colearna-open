@@ -1,10 +1,8 @@
 <template lang="pug">
 q-pa-md
-  h4.text-dark-green {{ parsedSteps.intro[0] }}
-  div(v-if="parsedSteps.intro.length > 1")
-    h6.text-dark-green(v-for = "(intro, idx)", :key="idx") {{ intro }}
+  h6.text-dark-green {{parseMarkdown(steps)[0].n}}
   q-stepper(v-model="step", header-nav, ref="stepper", color="primary", animated, rounded, bordered, vertical)
-    q-step(v-for="(m, k) in parsedSteps.steps", :name="k", :title="m.n", icon="blind", :done="step > k")
+    q-step(v-for="(m, k) in parsedSteps.slice(1, parsedSteps.length - 1)", :name="k", :title="m.n", icon="blind", :done="step > k")
       a(v-show="m.h", :href="m.h", target="_blank", rel="noopener noreferrer") {{m.n}}
       p(v-show="!m.h") {{(m.n || '')}}
 
@@ -34,8 +32,8 @@ export default defineComponent({
     function parseMarkdown(markdownText) {
       const lines = markdownText.split('\n');
       const pattern = /\[(.*?)\]\((.*?)\)/;
-      const steps = [];
-      const intros = [];
+      const result = [];
+      const intro_text = [];
       let found_number = false;
 
       for (const line of lines) {
@@ -52,18 +50,18 @@ export default defineComponent({
 
         // If we haven't found a line starting with a number, accumulate the lines
         if (!found_number) {
-          intros.push(trimmedLine);
+          intro_text.push(trimmedLine);
           continue;
         }
 
         const matches = trimmedLine.match(pattern);
         if (matches && matches.length >= 3) {
-          steps.push({
+          result.push({
             h: matches[2],
             n: matches[1],
           });
         } else {
-          steps.push({
+          result.push({
             n: trimmedLine,
           });
         }
@@ -73,7 +71,6 @@ export default defineComponent({
       result.unshift({ n: intro_text.join('\n') });
       return result;
     }
-
     return {
       step,
       parseMarkdown,
