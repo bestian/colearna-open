@@ -37,6 +37,8 @@ q-page.admin-page
       user-list(v-if="action == '用戶名單'", :users="users", @mailto="mailto")
       add-class(v-if="action == '手動新增課程'", :users="users", :classes="classes", :newImg="newImg", :newClassImg="newClassImg", :myImg="myImg")
       manage-class(v-if="action == '課程管理'", :users="users", :classes="classes", :newImg="newImg", :newClassImg="newClassImg", :myImg="myImg")
+
+
       q-card.editC-card(v-if="action == '課程管理' && editC !== ''")
         .col.flex-col.flex-center
           q-form.fluid
@@ -819,7 +821,6 @@ export default defineComponent({
       showColearna_events,
       name,
       new_email,
-      meta,
       step,
       slide,
       myKey2,
@@ -918,10 +919,10 @@ export default defineComponent({
     editArt(newA) {
       this.newArtImg = this.articles[newA].img || this.dummyImg;
     },
-    /* news (newNS) {
-      this.myNews = newNS || []
-      this.$forceUpdate()
-    } */
+    news(newNS) {
+      this.myNews = newNS || [];
+      this.$forceUpdate();
+    },
   },
   methods: {
     toggleEvent(eid: string) {
@@ -948,7 +949,7 @@ export default defineComponent({
       this.previewC = true;
     },
     approveC(cid: string) {
-      /* 接受新課程申請 */
+      接受新課程申請;
       const c = this.classes[cid];
       if (c) {
         c.approved = true;
@@ -1204,7 +1205,7 @@ export default defineComponent({
           img: this.newImg || '',
           author: this.newAuthor || '',
           outer_link: this.newOuterLink || '',
-          tags: (this.newTags || '').split(','),
+          tas: (this.newTags || '').split(','),
           text: this.newA,
         }).then(() => {
           console.log('article updated!');
@@ -1707,6 +1708,7 @@ export default defineComponent({
               reader.readAsDataURL(resp);
               reader.onload = (e) => {
                 /* eslint-disable  @typescript-eslint/no-non-null-assertion */
+
                 set(dbRef(db, 'articles/' + aid + '/image'), e.target!.result);
               };
             })
