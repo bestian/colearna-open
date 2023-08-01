@@ -41,7 +41,7 @@ q-page
       .row.long-padded.flex.flex-center
         q-card(class="about_card")
           h4.text-dark-gray 什麼是「共學課」？
-          p 平衡「進入體制內框架」和「逃出體制外自學」的學習系統。由家長自行聘請老師，為孩子們量身設計的小班制課程。
+          p 平衡「進入體制內框架」和「逃出體制外自學」的學習系統。平台負責媒合，由家長自行交換知識或聘請老師。
         q-card(class="about_card")
           h4.text-dark-gray Colearna共學島與一般共學課的不同？
           p 【共學島】以SEL (Social Emotional Learning 社會情緒學習) 為核心，精選整合多元課程資訊，協助老師開班，將選課及訂課流程系統化，化繁為簡成一站式的共學課資訊及訂課平台，為家長及孩子媒合最適合的共學課程。
@@ -51,7 +51,7 @@ q-page
           h6.text-dark-gray 嚴格把關
           .row
             .col.col-7
-              p.small 共學島的全方位專家團隊，逐一拜訪潛在老師合作夥伴，深入了解教學理念、課程內容及試上課堂，以確保平台上的老師及課程素質符合預期。
+              p.small 共學島的全方位專家團隊，逐一拜訪潛在老師合作夥伴，深入了解教學理念、課程內容及試上課堂，以確保平台上的老師及課程素質符合預期。 我們預計與教育專家學者合作，以及非營利組織，把關所有平台上的文章，影音以及學習方法，確保教育可以走在正道上傳道授業解惑。
             .col.col-5
               q-img(src="../assets/about_yellow_mountain.png", style="width: 100%; border-radius: 50%;")
         .filler
@@ -61,7 +61,7 @@ q-page
           h6.text-dark-gray 輕鬆方便
           .row
             .col.col-7
-              p.small 告別排山倒海的群組訊息，迅速完成找課、訂課及付款，並隨時得知課堂的最新通知。
+              p.small 告別排山倒海的群組訊息，我與信任的朋友交流學習方法以及知識，看專家學者符合您學習風格的文章與教學影片。
             .col.col-5
               q-img(src="../assets/about_red_mountain.png", style="width: 100%; border-radius: 50%;")
         .filler
@@ -71,14 +71,16 @@ q-page
           h6.text-dark-gray 可信的第三方
           .row
             .col.col-7
-              p.small 老師與家長的橋樑，讓家長找課更安心、老師開課更容易，使雙方都能專注實現自己所想的共創共好平台。
+              p.small 我們負責當家長與家長之間、家長與老師之間、以及老師彼此之間的橋樑。當大人一起成長，孩子就會更加獲益。
             .col.col-5
               q-img(src="../assets/about_green_mountain.png", style="width: 100%; border-radius: 50%;")
         .filler
   .row.white-back.long-padded
     q-img(src="../assets/about_target_title.png", style="max-width: 520px; width:70%;")
     .small-space
-    p 我們成立共學島，是由於我們看到台灣的公民社會的力量 – 家長們彼此連結，自行聘請老師，共同組織心目中的課堂給孩子，解決他們發現的社會議題。但是，目前這個家長們由下而上建立的共學生態，發展遇到瓶頸。
+    p 我們成立共學島，是由於我們看到台灣的公民社會的力量 – 家長們彼此連結，相互交換知識，或是自行聘請老師，共同組織心目中的課堂給孩子，解決他們發現的社會議題。
+    p 但是，目前這個家長們由下而上建立的共學生態，發展遇到瓶頸。
+    p
     p 參考聯合國制定的17項永續發展目標(SDGs)，共學島希望於以下兩個目標著力：
     .col.col-12
       .row
