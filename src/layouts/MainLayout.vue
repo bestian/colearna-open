@@ -258,7 +258,7 @@ export default defineComponent({
     const metaData = {
       title: '歡迎',
       titleTemplate: (title: string) => {
-        return `${title} - 共學島`;
+        return `${title} - 開源共學島`;
       },
       noscript: {
         default: 'This is content for browsers with no JS (or disabled JS)',
@@ -1142,7 +1142,7 @@ export default defineComponent({
 </script>
 
 <style type="text/css" scoped>
-  #logout {
+#logout {
   background-color: #f26e25 !important;
   border: none;
   color: white;
