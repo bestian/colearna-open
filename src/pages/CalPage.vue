@@ -1,6 +1,10 @@
 <template lang="pug">
 q-page(padding)
-  div(v-if="uid")
+  .row.flex.flex-start-center.long-padded(v-if="!uid")
+    h2.text-dark-green 您尚未登入，請先登入或註冊
+  .row.flex.flex-start-center.long-padded(v-else)
+    h2.text-dark-green 施工中
+  // div(v-else)
     .row
       h2.text-dark-green.text.left.bold.no-margin 我的活動
     .row
@@ -21,9 +25,11 @@ q-page(padding)
             h6.text-gray.bold.text-center.no-margin 我的收藏
     .row.justify-center.fluid
       .subcontent.fluid
-        navigation-bar(:inTeacher =' "false', :me =' "me', :selectedDate =' "selectedDate', :op =' "op', :filter_act =' "filter_act', :role =' "role', @setRole="setRole", @setOp="setOp", @setFil="setFil", @today="onToday", @prev="onPrev", @next="onNext")
+        navigation-bar(:inTeacher ="false", :me ="me"
+        , :selectedDate ="selectedDate", :op ="op", :filter_act ="filter_act", :role ="role", @setRole="setRole", @setOp="setOp", @setFil="setFil", @today="onToday", @prev="onPrev", @next="onNext")
+
         .row.justify-center(v-show="op == '活動一覽'")
-          q-card.my-card(v-for =' "(r, k) in my_paid(Object.values(classes || {}), (me.cart || []), (me.paid || []))', :key="k", v-show =' "action == '完成活動'')
+          q-card.my-card(v-for ="(r, k) in my_paid(Object.values(classes || {}), (me.cart || []), (me.paid || []))', :key="k", v-show =' "action == '完成活動'')
             img(:src="r.img", :alt="r.des")
             q-card-section.col.flex.flex-col
               .filler
@@ -35,11 +41,11 @@ q-page(padding)
                   | {{r.teacher}}
 
                   br
-                  span.text-gray.bold {{(r.tags || []).join(&apos; / &apos;)}}
+                  span.text-gray.bold {{(r.tags || []).join(' / ')}}
                 h6.fluid.text-left.text-orange.no-margin {{r.price}}
 
                   q-btn.float.right.lg-back.no-border.text-white(rounded, :to="'/class_info/' + k") 立即報名
-          q-card.my-card(v-for =' "(r, k) in fil(Object.values(classes || {}), myKey).slice(0, 4)', :key="k", v-show =' "action == '我的收藏' && (me.likes || []).indexOf(r.id) > -1')
+          q-card.my-card(v-for ="(r, k) in fil(Object.values(classes || {}), myKey).slice(0, 4)", :key="k", v-show = "action == '我的收藏' && (me.likes || []).indexOf(r.id) > -1")
             img(:src="r.img", :alt="r.des")
             q-icon.heart(name="favorite", color="red", size="md")
             q-card-section.col.flex.flex-col
@@ -52,22 +58,19 @@ q-page(padding)
                   | {{r.teacher}}
 
                   br
-                  span.text-gray.bold {{(r.tags || []).join(&apos; / &apos;)}}
+                  span.text-gray.bold {{(r.tags || []).join(' / ')}}
                 h6.fluid.text-left.text-orange.no-margin {{r.price}}
 
                   q-btn.float.right.lg-back.no-border.text-white(rounded, :to="'/class_info/' + k") 立即報名
+
         .row.justify-center(v-show="op == '月'")
           div(style="display: flex; max-width: 1280px; width: 100%;")
             q-calendar-month(ref="calendar", v-model="selectedDate", :date-type="dateType", :day-min-height="20", animated, bordered, @change="onChange", @moved="onMoved", @click-date="onClickDate", @click-day="onClickDay", @click-workweek="onClickWorkweek", @click-head-workweek="onClickHeadWorkweek", @click-head-day="onClickHeadDay")
               template(#day="{ scope: { timestamp } }")
                 template(v-for="(event, kk) in eventsMap[timestamp.date]", :key="event.id")
                   .my-event.clickable(:class="badgeClasses(kk, 'day', event.bgcolor || '')", :style="badgeStyles(kk, 'day')", @click.stop="goto('class_info/' + event.id.replace(/^.+:/,''))")
-                    div(class="title q-calendar__ellipsis") {{ event.date.replace(/^.+T/,&apos;&apos;).replace(/\s-.+\d/,&apos;&apos;) + &apos; &apos; + event.title.replace(/^.+｜/, &apos;&apos;) }}
-
+                     div.title.q-calendar__ellipsis") {{ event.date.replace(/^.+T/,'').replace(/\s-.+\d/,'') + '' + event.title.replace(/^.+｜/, '') }}
                       q-tooltip {{ event.des }}
-  .row.flex.flex-start-center.long-padded(v-else)
-    h2.text-dark-green 您尚未登入，請先登入或註冊
-
 </template>
 
 <script lang="ts">

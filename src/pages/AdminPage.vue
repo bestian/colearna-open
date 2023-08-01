@@ -582,15 +582,15 @@ q-page.admin-page
 <script lang="ts">
 import convert from 'image-file-resize';
 
-import AdminList from '@/components/admin/Admin_AdminList.vue';
-import TeacherList from '@/components/admin/Admin_TeacherList.vue';
-import NewTeacher from '@/components/admin/Admin_NewTeacher.vue';
-import AddClass from '@/components/admin/Admin_AddClass.vue';
-import UserList from '@/components/admin/Admin_UserList.vue';
-import SendEmail from 'components/SendEmail.vue';
-import PreviewClass from 'components/PopUp_PreviewClass.vue';
-import ClassRequest from '@/components/admin/Admin_ClassRequest.vue';
-import MarqueesList from '@/components/admin/Admin_MarqueesList.vue';
+import AdminList from '../components/admin/Admin_AdminList.vue';
+import TeacherList from '../components/admin/Admin_TeacherList.vue';
+import NewTeacher from '../components/admin/Admin_NewTeacher.vue';
+import AddClass from '../components/admin/Admin_AddClass.vue';
+import UserList from '../components/admin/Admin_UserList.vue';
+import SendEmail from '../components/SendEmail.vue';
+import PreviewClass from '../components/PopUp_PreviewClass.vue';
+import ClassRequest from '../components/admin/Admin_ClassRequest.vue';
+import MarqueesList from '../components/admin/Admin_MarqueesList.vue';
 
 import { useMeta } from 'quasar';
 // import ExampleComponent from 'components/ExampleComponent.vue'
@@ -1721,5 +1721,5 @@ export default defineComponent({
 </script>
 
 <style type="text/css">
-@import '@/css/admin.scss';
+@import '../css/admin.scss';
 </style>

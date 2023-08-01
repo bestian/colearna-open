@@ -91,7 +91,7 @@ module.exports = configure(function (/* ctx */) {
       // distDir
 
       // extendViteConf (viteConf) {},
-      // viteVuePluginOptions: {},
+      //viteVuePluginOptions: {},
 
       vitePlugins: [
         [

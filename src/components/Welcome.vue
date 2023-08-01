@@ -7,7 +7,7 @@ q-card.welcome-card
   .row.flex.flex-start-top
     .col-12.flex.flex-col.flex-start-center
       h2.text-dark-green.no-margin 升級版預告
-      h6.text-dark-green.no-margin 全新共學島，即將上線囉！7/04~7/23會逐步完善
+      h6.text-dark-green.no-margin 全新共學島，即將上線囉！8/04~8/23會逐步完善
   .row.flex.flex-center.no-margin.no-padding
     .col-12.flex.flex-col.flex-center.no-margin.no-padding
       q-list.flex.flex-center.no-padding.no-margin
@@ -46,7 +46,7 @@ q-card.welcome-card
         q-item.fluid
           q-avatar(icon="person_add_alt")
           q-item-section
-            | 共學島是一站式的組課平台（含學前、中小學、親子與家長成長等）
+            | 共學島是一站式的媒合與學習方法交流平台（含學前、中小學、親子與家長成長等）
         q-item.fluid
           q-avatar(icon="balance")
           q-item-section
