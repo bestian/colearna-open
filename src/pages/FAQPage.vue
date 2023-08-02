@@ -6,8 +6,6 @@ q-page.faq
 
 <script lang="ts">
 import { useMeta } from 'quasar';
-
-import { Meta } from 'components/models';
 // import ExampleComponent from 'components/ExampleComponent.vue';
 // import InApp from 'detect-inapp';
 import { defineComponent, ref } from 'vue';
@@ -40,7 +38,7 @@ export default defineComponent({
     });
     const step = ref(0);
 
-    return { meta, step, show };
+    return { step, show };
   },
   mounted() {
     // setInterval(this.go, 1000)
