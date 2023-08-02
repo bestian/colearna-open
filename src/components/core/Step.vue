@@ -29,15 +29,14 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const step = ref(1);
+    const step = ref(0);
 
-    const parseMarkdownToStructure = (markdownText: string) => {
-      console.log(markdownText);
-
+    function parseMarkdownToStructure(markdownText) {
       const lines = markdownText.split('\n');
       const pattern = /\[(.*?)\]\((.*?)\)/;
       const steps = [];
       const intros = [];
+      const tags = [];
       let foundNumber = false;
 
       for (const line of lines) {
@@ -45,6 +44,15 @@ export default defineComponent({
 
         // Skip empty lines
         if (!trimmedLine) {
+          continue;
+        }
+
+        // Check for lines that start with exactly one '#'
+        if (trimmedLine.startsWith('#') && !trimmedLine.startsWith('##')) {
+          const tagList = trimmedLine
+            .split(' ')
+            .filter((tag) => tag.startsWith('#'));
+          tags.push(...tagList.map((tag) => tag.replace('#', '')));
           continue;
         }
 
@@ -61,19 +69,33 @@ export default defineComponent({
 
         const matches = trimmedLine.match(pattern);
         if (matches && matches.length >= 3) {
-          steps.push({
-            h: matches[2],
-            n: matches[1],
-          });
+          const link = matches[2].startsWith('!')
+            ? matches[2].substring(1)
+            : matches[2];
+          if (matches[2].startsWith('!')) {
+            steps.push({
+              r: link,
+              n: matches[1],
+            });
+          } else {
+            steps.push({
+              h: link,
+              n: matches[1],
+            });
+          }
         } else {
           steps.push({
             n: trimmedLine,
           });
         }
       }
-      console.log({ intros: intros, steps: steps });
-      return { intros: intros, steps: steps };
-    };
+
+      return {
+        intros: intros,
+        tags: tags,
+        steps: steps,
+      };
+    }
 
     return {
       step,

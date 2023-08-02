@@ -10,7 +10,7 @@ q-page(padding)
     .col-md-8.col-sm-6.col-xs-12.red.text-center Hello World!
     .col-md-4.col-sm-6.col-xs-12.text-center
       strong {{h}}
-        | Holiday!
+        | {{$t('沙盒')}}
     ul
       li(v-for="(item, index) in list", :key="index") {{item}}
 </template>
@@ -33,7 +33,7 @@ export default defineComponent({
     };
     useMeta(metaData);
     return {
-      h: ref('Happy New'),
+      h: ref('New'),
       list: ref([0, 1, 2, 3, 4, 5]),
       steps: ref(
         `

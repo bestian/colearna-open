@@ -39,9 +39,9 @@ q-layout(view="lHh Lpr lFf")
         q-badge(color="red" floating v-show="nn(requests).length > 0") {{nn(requests).length + countClassNotifications() }}
       router-link.fat-only(to="/teacher_board", v-if="isTeacher") 老師後台
 
-      router-link.fat-only(to="/profile") 媒合
-      router-link.fat-only(to="/classes") 活動
-      router-link.fat-only(to="/news") 資訊
+      router-link.fat-only(to="/profile") {{$t('媒合')}}
+      router-link.fat-only(to="/classes") {{$t('活動')}}
+      router-link.fat-only(to="/news") {{$t('資訊')}}
       //router-link.fat-only(to="/classes") 課程
       //router-link.fat-only(to="/teachers") 老師
       // router-link(to="/about") 關於我們
@@ -103,12 +103,12 @@ q-layout(view="lHh Lpr lFf")
       // q-item(to="/") 家長
       q-item(to="/admin", v-if="isAdmin") 管理員系統
       q-item(to="/teacher_board", v-if="isTeacher") 老師後台
-      q-item(to="/profile") 媒合
-      q-item(to="/classes") 活動
-      q-item(to="/news") 資訊
-      q-item(to="/about") 關於我們
-      q-item(to="/faq") 常見問題FAQ
-      // q-item(to="/contact") 聯絡我們
+      q-item(to="/profile") {{$t('媒合')}}
+      q-item(to="/classes") {{$t('活動')}}
+      q-item(to="/news") {{$t('資訊')}}
+      q-item(to="/about") {{$t('關於我們')}}
+      // q-item(to="/faq") {{$t('常見問題')}}
+      q-item(to="/contact") {{$t('聯絡我們')}}
   q-page-container
     router-view(
       :dummyImg = "dummyImg",
@@ -183,8 +183,8 @@ q-layout(view="lHh Lpr lFf")
       .col-9.col-sm-9.col-md-9.col-xs-12.row
         .col-4.col-md-4.col-sm-4.col-xs-12
           q-list(dense="dense", padding="padding", role="list")
-            q-item.bold.f-link 認識我們
-            q-item.f-link(to="/about") 關於我們
+            q-item.bold.f-link {{$t('認識我們')}}
+            q-item.f-link(to="/about") {{$t('關於我們')}}
             q-item.f-link(to="/news") 最新消息
         .col-4.col-md-4.col-sm-4.col-xs-12
           q-list(dense="dense", padding="padding", role="list")
@@ -208,7 +208,9 @@ q-layout(view="lHh Lpr lFf")
 <script lang="ts">
 import { useMeta } from 'quasar';
 import meta from '../utils/meta.js';
+
 import { defineComponent, ref } from 'vue';
+
 import Login from '../components/Login.vue';
 import Welcome from '../components/Welcome.vue';
 //import { setLogLevel } from 'firebase/app';

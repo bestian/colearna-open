@@ -1,37 +1,11 @@
-<template>
-  <q-page>
-    <q-carousel
-      v-model="slide"
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      animated
-      :autoplay="2500"
-      :infinite="true"
-      :swipeable="true"
-      :transition-duration="1500"
-      control-color="primary"
-      class="no-border"
-    >
-      <q-carousel-slide name="style" class="row no-wrap flex-center">
-        <q-img class="main" :no-transition="true" :no-spinner="true" loading="eager" alt="text" referrerpolicy="no-referrer" style="width: 100%; height: 100%; border-radius: 0;"
-         src = "../assets/main001.png"></q-img>
-      </q-carousel-slide>
-      <q-carousel-slide name="style1" class="row no-wrap flex-center">
-        <q-img class="main" :no-transition="true" :no-spinner="true" loading="eager" alt="text" referrerpolicy="no-referrer" style="width: 100%; height: 100%; border-radius: 0;"
-         src = "../assets/main001.png"></q-img>
-      </q-carousel-slide>
-      <q-carousel-slide name="style2" class="row no-wrap flex-center">
-        <q-img class="main" :no-transition="true" :no-spinner="true" loading="eager" alt="text" referrerpolicy="no-referrer" style="width: 100%; height: 100%; border-radius: 0;"
-         src = "../assets/main001.png"></q-img>
-      </q-carousel-slide>
-    </q-carousel>
-  </q-page>
+<template lang="pug">
+q-page(padding)
+  step(:steps="steps")
 </template>
 
 <script lang="ts">
-import { useMeta } from 'quasar'
-
-import { Meta } from 'components/models';
+import { useMeta } from 'quasar';
+import Step from '../components/core/Step.vue';
 // import ExampleComponent from 'components/ExampleComponent.vue';
 // import InApp from 'detect-inapp';
 import { defineComponent, ref } from 'vue';
@@ -39,44 +13,62 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
   name: 'IndexPage',
   // components: { ExampleComponent },
-  props: ['uid', 'me', 'users', 'user', 'email', 'photoURL', 'isLogout', 'isInApp'],
-  setup () {
+  components: {
+    Step,
+  },
+  props: [
+    'uid',
+    'me',
+    'users',
+    'user',
+    'email',
+    'photoURL',
+    'isLogout',
+    'isInApp',
+  ],
+  setup() {
     const metaData = {
       title: '聯絡我們',
       noscript: {
-        default: 'This is content for browsers with no JS (or disabled JS)'
-      }
-    }
-    useMeta(metaData)
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
+    };
+    useMeta(metaData);
 
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    const step = ref(0)
+    return {
+      steps: ref(
+        `
+        要如何參與本專案的開發呢？
 
-    return { meta, step };
-  }, 
-  mounted () {
+        #join #open-source #contribute
+
+        1. [先進入此專案](https://www.github.com/bestian/colearna-open/)
+        2. [看Wiki](https://github.com/bestian/colearna-open/wiki)
+        3. [看README.md](https://github.com/bestian/colearna-open#readme)
+        4. [錯誤回報和功能建議，請上Issues](https://github.com/bestian/colearna-open/issues)
+        `
+      ),
+    };
+  },
+  mounted() {
     // setInterval(this.go, 1000)
   },
   methods: {
-    go () {
+    go() {
       this.$nextTick(() => {
-        this.step++
+        this.step++;
       });
     },
-    loginGoogle () {
-      this.$emit('loginGoogle')
+    loginGoogle() {
+      this.$emit('loginGoogle');
     },
-    logout () {
-      this.$emit('logout')
-    }
-  }
+    logout() {
+      this.$emit('logout');
+    },
+  },
 });
 </script>
 
 <style scopoed>
-
 /* Single Page Style*/
-
 </style>

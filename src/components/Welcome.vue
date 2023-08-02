@@ -6,7 +6,7 @@ q-card.welcome-card
 
   .row.flex.flex-start-top
     .col-12.flex.flex-col.flex-start-center
-      h2.text-dark-green.no-margin 升級版預告
+      h2.text-dark-green.no-margin {{$t('升級版預告')}}
       h6.text-dark-green.no-margin 全新共學島，即將上線囉！8/04~8/23會逐步完善
   .row.flex.flex-center.no-margin.no-padding
     .col-12.flex.flex-col.flex-center.no-margin.no-padding
