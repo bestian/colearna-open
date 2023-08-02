@@ -1,7 +1,5 @@
 # 共學島轉型發展開源非營利媒合及學習支持平台 (Colearna-open)
 
-<img src="https://github.com/bestian/colearna-open/assets/109048/7cf3cb7e-d9e9-4efd-9ec5-f193ea9e9878=100x)" width="200" height="150" />
-
 # 這個是什麼？
 
 1. 這是個媒合平台。
@@ -72,8 +70,9 @@
 
 # 如何參與貢獻？ How to Contribute
 
+0. 請為本專打一個星號(star)，在 Github 介面右上方
 1. 請填寫本[需求調查表單](https://forms.gle/2w4p13Vm7d1CoEBj9)
-2. 請為本專打一個星號(star)，在 Github 介面右上方
+2. more...
 
 ## 翻譯 Transator
 
