@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /keys/
+Sitemap: https://bestian.githu.io/colearna/sitemap.xml
