@@ -72,6 +72,9 @@
 
 # 如何參與貢獻？ How to Contribute
 
+1. 請填寫本[需求調查表單](https://forms.gle/2w4p13Vm7d1CoEBj9)
+2. 請為本專打一個星號(star)，在 Github 介面右上方
+
 ## 翻譯 Transator
 
 本專案有安裝國際化套件，您可以參與翻譯內容
