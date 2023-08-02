@@ -453,26 +453,6 @@
             >
           </q-form>
         </div>
-        <div class="row">
-          <q-form class="flex flex-start-center fluid">
-            <h4 class="text-left text-dark-green fluid">帳戶設定</h4>
-          </q-form>
-          <q-form class="flex flex-start-center fluid">
-            <label class="text-gray margin">付款方式</label>
-            <q-input
-              class="margin"
-              type="text"
-              v-model="myPayMethod"
-              placeholder="付款方式"
-              style="max-width: 300px"
-              @focus="
-                focusDate = [];
-                focusMyDate = false;
-              "
-            >
-            </q-input>
-          </q-form>
-        </div>
         <div class="row" v-if="me.provider == 'email'">
           <q-form class="flex flex-start-center fluid">
             <h4 class="text-left text-dark-green fluid">變更密碼</h4>
