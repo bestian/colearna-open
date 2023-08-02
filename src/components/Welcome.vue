@@ -54,7 +54,7 @@ q-card.welcome-card
         q-item.fluid
           q-avatar(icon="contact_mail")
           q-item-section
-            | 家長可以自己當老師，也可以和老師互相交流教學方法。平台只是媒合，由家長自行交換知識或是聘請老師。
+            | 家長可以自己當老師，也可以和老師互相交流教學方法。平台只是媒合，促進家長自行交換知識或是聘請老師。
         q-item(clickable @click="goAbout()").bold.fluid.text-light-blue-14
           q-avatar(icon="tips_and_updates")
           q-item-section.text-underline

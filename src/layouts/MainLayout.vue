@@ -1098,7 +1098,7 @@ export default defineComponent({
             const photoURL = decodeURI(user.photoURL || '');
             console.log('logged in');
             // this.addEvent()
-            this.updateMe(uid, email, name, photoURL, 'goole');
+            this.updateMe(uid, email, name, photoURL, 'google');
           })
           .catch((error: { code: string; message: string }) => {
             // Handle Errors here.
