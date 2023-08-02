@@ -1,5 +1,5 @@
 # 共學島轉型發展開源非營利媒合及學習支持平台 (Colearna-open)
-![IMG_1697](https://github.com/bestian/colearna-open/assets/109048/7cf3cb7e-d9e9-4efd-9ec5-f193ea9e9878)
+<img src="https://github.com/bestian/colearna-open/assets/109048/7cf3cb7e-d9e9-4efd-9ec5-f193ea9e9878=100x)" width="200" height="150" />
 
 
 # 如何分享有餘？
