@@ -91,6 +91,21 @@
                 "
               >
               </q-input>
+            <q-form class="flex flex-start-center fluid">
+              <label class="text-gray margin">給自己一些媒合用的關鍵字吧！</label>
+              <q-input
+                class="margin"
+                filled
+                type="textarea"
+                v-model="myTags"
+                placeholder="請用逗號分隔，如：美食,小說,圍棋"
+                style="max-width: 300px"
+                @focus="
+                  focusDate = [];
+                  focusMyDate = false;
+                "
+              >
+              </q-input>
 
               <!--- 我也要測學習風格!! -->
             </q-form>
@@ -515,6 +530,7 @@ export default defineComponent({
     const myDate = ref('');
     const myCity = ref('');
     const myIntro = ref('');
+    const myTags = ref('');
     const myPayMethod = ref('信用卡');
     const focusDate = ref([]);
     const focusMyDate = ref(false);
@@ -532,6 +548,7 @@ export default defineComponent({
       editCP,
       myCity,
       myIntro,
+      myTags,
       myPayMethod,
       myName,
       myEmail,
@@ -549,6 +566,7 @@ export default defineComponent({
       this.myDate = this.me.date;
       this.myCity = this.me.city;
       this.myIntro = this.me.intro;
+      this.myTags = m.myTags;
       this.childern = this.me.childern || [];
       this.myPhotoURL = this.me.photoURL || this.photoURL;
       this.myPayMethod = this.me.payMethod || '信用卡';
@@ -568,6 +586,7 @@ export default defineComponent({
             this.myDate = m.date;
             this.myCity = m.city;
             this.myIntro = m.intro;
+            this.myTags = m.myTags;
             this.childern = m.childern || [];
             this.myPhotoURL = m.photoURL || this.photoURL;
             this.myPayMethod = m.payMethod || '信用卡';
@@ -597,6 +616,7 @@ export default defineComponent({
               this.myDate = m.date;
               this.myCity = m.city;
               this.myIntro = m.intro;
+              this.m.intro = m.myTags;
               this.childern = m.childern || [];
               this.myPhotoURL = m.photoURL || this.photoURL;
               this.myPayMethod = m.payMethod || '信用卡';
@@ -626,6 +646,7 @@ export default defineComponent({
         this.myName = newM.name;
         this.myCity = newM.city || '';
         this.myIntro = newM.intro || '';
+        this.myTags = newM.tags || '';
         this.myDate = newM.date;
         this.myEmail = newM.email || this.email;
         this.myPhone = newM.phone || '';
@@ -837,6 +858,7 @@ export default defineComponent({
         phone: this.myPhone || '',
         city: this.myCity || '',
         intro: this.myIntro || '',
+        tags: this.myTags || '',
         childern: this.childern || [],
         des: this.me.des || '',
         thought: this.me.thought || '',
