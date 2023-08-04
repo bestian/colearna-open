@@ -6,7 +6,8 @@
  * 後端API：cloudflare worker x node.js
 
 ### 開發模式
-* 敏捷式 
+* 敏捷式
+* 分支管理 => 每項主要功能的開發，開一個Brench。最後整合進mastar，再進release。
 
 ## 這個將會是什麼？
 
