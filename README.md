@@ -1,8 +1,9 @@
 # 共學島轉型發展開源非營利媒合及學習支持平台 (Colearna-open)
 
 ## 開發環境
-前端：Quasar x Vue3 x scss x typescript
-後端API：cloudflare worker x node.js
+ * 前端：[Quasar](https://quasar.dev/) x Vue3 x typescript
+ * UI [Quasar](https://quasar.dev/) x scss 
+ * 後端API：cloudflare worker x node.js
 
 ### 開發模式
 * 敏捷式 
