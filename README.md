@@ -2,7 +2,7 @@
 
 ## 開發環境
  * 前端：[Quasar](https://quasar.dev/) x Vue3 x typescript
- * UI [Quasar](https://quasar.dev/) x scss 
+ * UI [Quasar](https://quasar.dev/) x scss   ( Wireframe:  紙筆Pencil x Zeplin  )
  * 後端API：cloudflare worker x node.js
 
 ### 開發模式
