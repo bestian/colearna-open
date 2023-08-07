@@ -428,7 +428,7 @@ export default defineComponent({
     if (ww === 'done') {
       this.showWelcome = false;
       this.neverShowWelcome = true;
-      this.$router.push('/sandbox');
+      // this.$router.push('/sandbox');
     }
   },
   watch: {
