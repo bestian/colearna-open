@@ -362,6 +362,7 @@ q-page.admin-page
         q-form.col-12.flex.flex-col
           span.red.star.down *
           q-input.margin.fluid(type="text", v-model="newAid", placeholder="請先輸入文章的Id")
+          q-input.margin.fluid(type="text", label="標籤(請用逗號分隔)", v-model="newTags", placeholder="標籤(請用逗號分隔)")
           q-input.margin.fluid(type="text", label="標題(彈性)", v-model="newTitle", placeholder="標題(彈性)")
           q-input.margin.fluid(type="text", label="副標題(彈性)", v-model="newSub", placeholder="副標題(彈性)")
           q-input.margin.fluid(type="text", label="作者(彈性)", v-model="newAuthor", placeholder="作者(彈性)")
@@ -1203,9 +1204,9 @@ export default defineComponent({
           title: this.newTitle || '',
           sub: this.newSub || '',
           img: this.newImg || '',
+          tags: (this.newTags || '').split(','),
           author: this.newAuthor || '',
           outer_link: this.newOuterLink || '',
-          tas: (this.newTags || '').split(','),
           text: this.newA,
         }).then(() => {
           console.log('article updated!');
