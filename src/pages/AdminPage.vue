@@ -443,10 +443,14 @@ q-page.admin-page
         q-btn(color="blue", icon="save", @click="createA(newAid)") 新增此文章
       .q-pa-md.q-gutter-sm(v-if="action == '文章管理' && editArt !== ''")
         q-form.col-12.flex.flex-col
+          q-input.margin.fluid(type="text", label="標籤", v-model="newTags", placeholder="標籤(逗號分隔)")
           q-input.margin.fluid(type="text", label="封面圖片網址", v-model="newArtImg", placeholder="封面圖片網址")
-          q-input.margin.fluid(type="text", label="標題(彈性)", v-model="newTitle", placeholder="標題(彈性)")
-          q-input.margin.fluid(type="text", label="副標題(彈性)", v-model="newSub", placeholder="副標題(彈性)")
-          q-input.margin.fluid(type="text", label="作者(彈性)", v-model="newAuthor", placeholder="作者(彈性)")
+          q-input.margin.fluid(type="text", label="標題", v-model="newTitle", placeholder="標題")
+          //Todo: red star
+          q-input.margin.fluid(type="text", label="副標題", v-model="newSub", placeholder="副標題")
+          //Todo: red star
+          q-input.margin.fluid(type="text", label="作者", v-model="newAuthor", placeholder="作者")
+          //Todo: red star
         q-list
           q-item(v-for="(i, k) in videos", :key="k")
             a.fluid.text-center.flex.flex-start-center.text-black(@click="startEditArt(i.id)")
@@ -1137,9 +1141,10 @@ export default defineComponent({
       const obj = arr[aid];
       console.log(obj);
       this.newTitle = obj.title;
+      this.newTags = (obj.tags || []).join(',');
       this.newA = obj.text;
       this.newImg = obj.img;
-      this.newAuthor = obj.author;
+      this.newAuthor = obj.author || '共學島';
       this.newSub = obj.sub;
       this.newTags = (obj.tags || []).join(',');
       this.newOuterLink = obj.outer_link || '';
@@ -1602,6 +1607,11 @@ export default defineComponent({
     saveA(aid: string) {
       console.log(this.newA);
       const logs: Array<any> = [...this.logs] || [];
+
+      /*
+        add checker here....
+      */
+
       logs.push({
         img: this.newArtImg,
         time: new Date().getTime(),
