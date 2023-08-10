@@ -7,7 +7,7 @@ q-card.welcome-card
   .row.flex.flex-start-top
     .col-12.flex.flex-col.flex-start-center
       h2.text-dark-green.no-margin {{$t('升級版預告')}}
-      h6.text-dark-green.no-margin 全新共學島，即將上線囉！8/04~8/23會逐步完善
+      h6.text-dark-green.no-margin 全新共學島，即將上線囉！8/09~11/09會逐步完善
   .row.flex.flex-center.no-margin.no-padding
     .col-12.flex.flex-col.flex-center.no-margin.no-padding
       q-list.flex.flex-center.no-padding.no-margin
@@ -24,7 +24,7 @@ q-card.welcome-card
           q-avatar(icon="person_add_alt")
           q-item-section
             | 您可用Google或email註冊，請使用和原帳號相同的方式及Email來註冊。
-        q-item.fluid
+        //q-item.fluid
           q-avatar(icon="contact_mail")
           q-item-section
             | 若您原本是用Line登入，請使用和您的Line帳號相同的Email來進行Email註冊。
@@ -38,7 +38,11 @@ q-card.welcome-card
         q-item.fluid
           q-avatar(icon="account_circle")
           q-item-section
-            | 舊版網站的帳號資料我們已妥善保存。2023/11/23起，您可將您原本儲存在共學島平台的資料，部份整併到新帳號。
+            | 舊版網站的帳號資料我們已妥善保存。未來您可將您原本儲存在共學島平台的資料，部份整併到新帳號。
+        q-item(clickable @click="goTransform()").bold.fluid.text-light-blue-14
+          q-avatar(icon="tips_and_updates")
+          q-item-section.text-underline
+            | 關於我們的轉型計畫理念和作法，請按此「參與轉型」
     .col-md-6.col-sm-6.col-xs-12.flex.flex-col.flex-start-center
       h4.text-dark-green.no-margin 新朋友
       h6.text-dark-green.no-margin 歡迎加入共學島
@@ -56,9 +60,9 @@ q-card.welcome-card
           q-item-section
             | 家長可以自己當老師，也可以和老師互相交流教學方法。平台只是媒合，促進家長自行交換知識或是聘請老師。
         q-item(clickable @click="goAbout()").bold.fluid.text-light-blue-14
-          q-avatar(icon="tips_and_updates")
+          q-avatar(icon="info")
           q-item-section.text-underline
-            | 關於我們的理念和作法，請按此「瞭解更多」
+            | 關於我們的原本理念和作法，請按此「瞭解更多」
   .row.flex.flex-center
     .col-12.flex.flex-col.flex-center
       q-list.flex.flex-center.no-padding.no-margin
@@ -91,6 +95,9 @@ export default defineComponent({
     goAbout() {
       this.$router.push('/about');
       this.$emit('stopWelcome', this.neverShowWelcome);
+    },
+    goTransform() {
+      window.open('https://www.bestian.com/colearna-open/', '_blank');
     },
     goFAQ() {
       this.$router.push('/faq');

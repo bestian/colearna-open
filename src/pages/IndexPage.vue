@@ -9,10 +9,7 @@ q-page
     .filler
     .col-md-6.col-sm-8.col-xs-12
       ul.lwww-back.padded.no-margin
-        li.p-16
-          router-link(to="/sandbox") 開發中的沙盒
-        li.p-16
-          a(href="https://www.github.com/bestian/colearna-open/", target="_blank", rel="noopener no-referrer") github repo(開發中)
+        step(:steps="join")
     .filler
   q-carousel.no-border.lwww-back(v-model="slide", transition-prev="slide-right", transition-next="slide-left", :infinite="false", :swipeable="false", control-color="primary")
     q-carousel-slide.row.no-wrap.flex-center(name="style")
@@ -76,16 +73,16 @@ q-page
 </template>
 
 <script lang="ts">
-import { setLogLevel } from 'firebase/app';
+import { parseMarkdownToSteps } from 'edu-lang';
 import { useMeta } from 'quasar';
-import { Meta } from 'components/models';
+import Step from '../components/core/Step.vue';
 // import ExampleComponent from 'components/ExampleComponent.vue';
 // import InApp from 'detect-inapp';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  // components: { ExampleComponent },
+  components: { Step },
   props: [
     'uid',
     'me',
@@ -100,6 +97,20 @@ export default defineComponent({
     'articles',
   ],
   setup() {
+    const join = `
+
+    歡迎參與開源共學島的共創：
+
+    有興趣者請進行以下協同步驟：
+
+    1. 進入[Github開源共學島專案](https://github.com/bestian/colearna-open/)。
+    2. 點選[參與本專案](https://github.com/bestian/colearna-open/wiki/%E5%8F%83%E8%88%87%E6%9C%AC%E5%B0%88%E6%A1%88(Join-Us)
+    3. 透過網站註冊，加入共學島的測試會員，測試跑流。
+    4. 歡迎[Fork Us ad Github](https://github.com/bestian/colearna-open/fork)，並進行修改。
+    `;
+
+    const join_steps = parseMarkdownToSteps(join);
+
     const metaData = {
       title: '歡迎',
       noscript: {
@@ -108,9 +119,6 @@ export default defineComponent({
     };
     useMeta(metaData);
 
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
     const cs = ref([
       '親子',
       '父母',
@@ -151,10 +159,9 @@ export default defineComponent({
       },
     ]);
 
-    return { meta, step, slide, cs, cos, trips, myKey2 };
+    return { join, join_steps, step, slide, cs, cos, trips, myKey2 };
   },
   mounted() {
-    setLogLevel('silent');
     // setInterval(this.go, 1000)
   },
   methods: {

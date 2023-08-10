@@ -2,15 +2,17 @@
 q-pa-md
   h4.text-dark-green {{parsedSteps.intros[0]}}
   div(v-if="parsedSteps && parsedSteps.intros && parsedSteps.intros.length > 0")
-    h6.text-dark-gray(v-for="(intro, idx) in parsedSteps.intros.slice(1, parsedSteps.intros.length)", :key="idx") {{intro}}
+    h6.text-dark-gray(v-for="(intro, idx) in parsedSteps.intros", :key="idx") {{intro}}
 
   q-stepper(v-model="step", header-nav, ref="stepper", color="primary", animated, rounded, bordered, vertical)
     q-step(v-for="(m, k) in parsedSteps.steps", :name="k", :title="m.n", icon="blind", :done="step > k")
-      a(v-show="m.h", :href="m.h", target="_blank", rel="noopener noreferrer") {{m.n}}
-      p(v-show="!m.h") {{(m.n || '')}}
+      router-link(v-if="m.r", :to="m.r") {{m.n}}
+      a(v-else-if="m.h", :href="m.h", target="_blank", rel="noopener noreferrer") {{m.n}}
+      p(v-else) {{(m.n || '')}}
 </template>
 
 <script lang="ts">
+import { parseMarkdownToSteps } from 'edu-lang';
 import { defineComponent, ref, computed, onMounted } from 'vue';
 export default defineComponent({
   name: 'StepPer',
@@ -24,89 +26,23 @@ export default defineComponent({
         1.先在家裡廚房幫忙
         2.觀察外食店家的食材搭配
         3.採購的時候，幫忙一起採購
-
         `,
     },
   },
   setup(props) {
     const step = ref(0);
 
-    function parseMarkdownToStructure(markdownText) {
-      const lines = markdownText.split('\n');
-      const pattern = /\[(.*?)\]\((.*?)\)/;
-      const steps = [];
-      const intros = [];
-      const tags = [];
-      let foundNumber = false;
-
-      for (const line of lines) {
-        const trimmedLine = line.trim();
-
-        // Skip empty lines
-        if (!trimmedLine) {
-          continue;
-        }
-
-        // Check for lines that start with exactly one '#'
-        if (trimmedLine.startsWith('#') && !trimmedLine.startsWith('##')) {
-          const tagList = trimmedLine
-            .split(' ')
-            .filter((tag) => tag.startsWith('#'));
-          tags.push(...tagList.map((tag) => tag.replace('#', '')));
-          continue;
-        }
-
-        // Check if the line starts with a number
-        if (/^\d/.test(trimmedLine)) {
-          foundNumber = true;
-        }
-
-        // If we haven't found a line starting with a number, accumulate the lines as intros
-        if (!foundNumber) {
-          intros.push(trimmedLine);
-          continue;
-        }
-
-        const matches = trimmedLine.match(pattern);
-        if (matches && matches.length >= 3) {
-          const link = matches[2].startsWith('!')
-            ? matches[2].substring(1)
-            : matches[2];
-          if (matches[2].startsWith('!')) {
-            steps.push({
-              r: link,
-              n: matches[1],
-            });
-          } else {
-            steps.push({
-              h: link,
-              n: matches[1],
-            });
-          }
-        } else {
-          steps.push({
-            n: trimmedLine,
-          });
-        }
-      }
-
-      return {
-        intros: intros,
-        tags: tags,
-        steps: steps,
-      };
-    }
-
-    return {
-      step,
-      parseMarkdownToStructure,
-      parsedSteps: computed(() => parseMarkdownToStructure(props.steps)),
-    };
     onMounted(() => {
       console.log('mounted');
       console.log(props.steps);
-      console.log(parseMarkdownToStructure(props.steps));
+      console.log(parseMarkdownToSteps(props.steps));
     });
+
+    return {
+      step,
+      parseMarkdownToSteps,
+      parsedSteps: computed(() => parseMarkdownToSteps(props.steps)),
+    };
   },
 });
 </script>

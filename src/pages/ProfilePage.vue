@@ -1,206 +1,82 @@
-<template>
-  <q-page>
-    <div class="row padded">
-      <h2 class="text-dark-green">
-        <q-icon name="menu_book"></q-icon>
-        會員資料
-      </h2>
-    </div>
-    <div class="row long-padded" v-if="!uid">
-      <h2 class="text-dark-green">您尚未登入，請先登入或註冊</h2>
-    </div>
-    <div class="row long-padded flex flex-center light-yellow-back" v-else>
-      <q-card class="profile-card">
-        <h4 class="text-left text-dark-green fluid">家長資料</h4>
-        <div class="row">
-          <div class="col-6 col-md-6 col-sm-8 col-xs-8 flex-col">
-            <q-form class="flex flex-start-center fluid row">
-              <label class="text-gray margin"
-                >真實姓名<span class="red star">*</span></label
-              >
-              <q-input
-                class="margin"
-                v-model="myName"
-                placeholder="姓名*"
-                style="max-width: 300px"
-                @focus="
+<template lang="pug">
+q-page
+  .row.padded
+    h2.text-dark-green
+      q-icon(name="menu_book")
+      | 會員資料
+  .row.long-padded(v-if="!uid")
+    h2.text-dark-green 您尚未登入，請先登入或註冊
+  .row.long-padded.flex.flex-center.light-yellow-back(v-else)
+    q-card.profile-card
+      h4.text-left.text-dark-green.fluid 家長資料
+      .row
+        .col-6.col-md-6.col-sm-8.col-xs-8.flex-col
+          q-form.flex.flex-start-center.fluid.row
+            label.text-gray.margin 真實姓名
+              span.red.star *
+            q-input.margin(v-model="myName", placeholder="姓名*", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-              >
-              </q-input>
-            </q-form>
-            <q-form class="flex flex-start-center fluid row">
-              <label class="text-gray margin"
-                >生日<span class="red star">*</span></label
-              >
-              <q-input
-                class="margin"
-                v-model="myDate"
-                placeholder="生日"
-                style="max-width: 300px"
-                @focus="focusMyDate = true"
-                @click="focusMyDate = true"
-              >
-              </q-input>
-              <div
-                class="date-picker row flex flex-center"
-                v-show="focusMyDate"
-              >
-                <q-date v-model="myDate" />
-                <q-btn
-                  class="confirm-date"
-                  color="secondary"
-                  @click="
+                `)
+          q-form.flex.flex-start-center.fluid.row
+            label.text-gray.margin 生日
+              span.red.star *
+            q-input.margin(v-model="myDate", placeholder="生日", style="max-width: 300px", @focus="focusMyDate = true", @click="focusMyDate = true")
+            .date-picker.row.flex.flex-center(v-show="focusMyDate")
+              q-date(v-model="myDate")
+              q-btn.confirm-date(color="secondary", @click=`
                     focusDate = [];
                     focusMyDate = false;
-                  "
-                  >確認</q-btn
-                >
-              </div>
-            </q-form>
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-gray margin"
-                >居住城市<span class="red star">*</span></label
-              >
-              <q-input
-                class="margin"
-                type="text"
-                v-model="myCity"
-                placeholder="居住城市"
-                style="max-width: 300px"
-                @focus="
+                  `) 確認
+          q-form.flex.flex-start-center.fluid
+            label.text-gray.margin 居住城市
+              span.red.star *
+            q-input.margin(type="text", v-model="myCity", placeholder="居住城市", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-              >
-              </q-input>
-            </q-form>
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-gray margin">關於我</label>
-              <q-input
-                class="margin"
-                filled
-                type="textarea"
-                v-model="myIntro"
-                placeholder="介紹一下自己吧！興趣、工作等等，越詳細對媒合愈有幫助喔"
-                style="max-width: 300px"
-                @focus="
+                `)
+          q-form.flex.flex-start-center.fluid
+            label.text-gray.margin 關於我
+            q-input.margin(filled, type="textarea", v-model="myIntro", placeholder="介紹一下自己吧！興趣、工作等等，越詳細對媒合愈有幫助喔", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-              >
-              </q-input>
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-gray margin">給自己一些媒合用的關鍵字吧！</label>
-              <q-input
-                class="margin"
-                filled
-                type="textarea"
-                v-model="myTags"
-                placeholder="請用逗號分隔，如：美食,小說,圍棋"
-                style="max-width: 300px"
-                @focus="
+                `)
+          q-form.flex.flex-start-center.fluid
+            label.text-gray.margin 給自己一些媒合用的關鍵字吧！
+            q-input.margin(filled, type="textarea", v-model="myTags", placeholder="請用逗號分隔，如：美食,小說,圍棋", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-              >
-              </q-input>
-
-              <!--- 我也要測學習風格!! -->
-            </q-form>
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-gray margin"
-                >手機號碼<span class="red star">*</span></label
-              >
-              <q-input
-                class="margin"
-                type="text"
-                v-model="myPhone"
-                placeholder="手機號碼*"
-                style="max-width: 300px"
-                @focus="
+                `)
+          q-form.flex.flex-start-center.fluid
+            label.text-gray.margin 手機號碼
+              span.red.star *
+            q-input.margin(type="text", v-model="myPhone", placeholder="手機號碼*", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-              >
-              </q-input>
-            </q-form>
-            <q-form class="flex flex-start-center fluid">
-              <label class="text-gray margin"
-                >Email信箱<span class="red star">*</span></label
-              >
-              <q-input
-                bg-color="teal-2"
-                standout="bg-teal-4 text-black"
-                square
-                class="margin readonly-input"
-                type="email"
-                v-model="myEmail"
-                placeholder="Email*"
-                :readonly="true"
-                style="max-width: 300px"
-                @focus="
+                `)
+          q-form.flex.flex-start-center.fluid
+            label.text-gray.margin Email信箱
+              span.red.star *
+            q-input.margin.readonly-input(bg-color="teal-2", standout="bg-teal-4 text-black", square, type="email", v-model="myEmail", placeholder="Email*", :readonly="true", style="max-width: 300px", @focus=`
                   focusDate = [];
                   focusMyDate = false;
-                "
-                v-if="myEmail"
-              >
-              </q-input>
-            </q-form>
-
-            <p class="text-orange mini margin-top" v-show="!myEmail">
-              **請先填寫完再繼續
-            </p>
-          </div>
-          <div class="filler"></div>
-          <div
-            class="col-6 col-md-4 col-sm-4 col-xs-4 flex flex-col flex-start-center"
-          >
-            <img class="big avatar" :src="myPhotoURL" />
-            <q-btn
-              unelevated
-              class="no-border no-bg text-dark-green"
-              @click="editP = true"
-              >編輯</q-btn
-            >
-            <q-form class="flex flex-start-center fluid" v-show="editP">
-              <q-file
-                color="teal"
-                filled
-                label="上傳大頭貼"
-                accept="image/*"
-                @input="uploadImage($event)"
-                name="photoURL"
-              >
-                <template v-slot:prepend>
-                  <q-icon name="cloud_upload" />
-                </template>
-              </q-file>
-            </q-form>
-          </div>
-        </div>
-        <div class="row fluid flex flex-start-center">
-          <div class="filler"></div>
-          <q-btn
-            unelevated
-            rounded
-            class="margin or-back text-white"
-            @click="submit()"
-            size="lg"
-            >更新資料</q-btn
-          >
-        </div>
-        <div class="row">
-          <q-form class="flex flex-start-center fluid">
-            <h4 class="text-left text-dark-green fluid">學生資料</h4>
-            <q-btn
-              unelevated
-              color="primary"
-              rounded
-              size="lg"
-              icon="person_add"
-              @click="
+                `, v-if="myEmail")
+          p.text-orange.mini.margin-top(v-show="!myEmail") **請先填寫完再繼續
+        .filler
+        .col-6.col-md-4.col-sm-4.col-xs-4.flex.flex-col.flex-start-center
+          img.big.avatar(:src="myPhotoURL")
+          q-btn.no-border.no-bg.text-dark-green(unelevated, @click="editP = true") 編輯
+          q-form.flex.flex-start-center.fluid(v-show="editP")
+            q-file(color="teal", filled, label="上傳大頭貼", accept="image/*", @input="uploadImage($event)", name="photoURL")
+              template(v-slot:prepend)
+                q-icon(name="cloud_upload")
+      .row.fluid.flex.flex-start-center
+        .filler
+        q-btn.margin.or-back.text-white(unelevated, rounded, @click="submit()", size="lg") 更新資料
+      .row
+        q-form.flex.flex-start-center.fluid
+          h4.text-left.text-dark-green.fluid 學生資料
+          q-btn(unelevated, color="primary", rounded, size="lg", icon="person_add", @click=`
                 childern.push({
                   likeDay: false,
                   likeNight: false,
@@ -222,263 +98,96 @@
                   int_naturalist,
                   standard: 80,
                 })
-              "
-            >
-              新增子女
-            </q-btn>
-          </q-form>
-          <div class="row padded" v-for="(c, i) in childern" :key="i">
-            <div class="col-6 col-md-6 col-sm-8 col-xs-8 flex flex-col">
-              <q-form class="flex flex-start-center fluid row">
-                <h4 class="text-dark-gray">{{ i + 1 }}.</h4>
-                <q-input
-                  class="margin"
-                  v-model="c.name"
-                  placeholder="姓名*"
-                  style="max-width: 300px"
-                  @focus="
+              `) 新增子女
+        .row.padded(v-for="(c, i) in childern", :key="i")
+          .col-6.col-md-6.col-sm-8.col-xs-8.flex.flex-col
+            q-form.flex.flex-start-center.fluid.row
+              h4.text-dark-gray {{ i + 1 }}
+                | .
+              q-input.margin(v-model="c.name", placeholder="姓名*", style="max-width: 300px", @focus=`
                     focusDate[i] = false;
                     focusMyDate = false;
-                  "
-                >
-                </q-input>
-
-                <q-select
-                  v-model="c.gender"
-                  :options="['女', '男', '雙性', '其他']"
-                  label="性別"
-                  style="max-width: 300px; min-width: 200px"
-                />
-              </q-form>
-
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin"
-                  >生日<span class="red star">*</span></label
-                >
-                <q-input
-                  class="margin"
-                  v-model="c.date"
-                  placeholder="生日*"
-                  style="max-width: 300px"
-                  @focus="
+                  `)
+              q-select(v-model="c.gender", :options="['女', '男', '雙性', '其他']", label="性別", style="max-width: 300px; min-width: 200px")
+            q-form.flex.flex-start-center.fluid.row
+              label.text-gray.margin 生日
+                span.red.star *
+              q-input.margin(v-model="c.date", placeholder="生日*", style="max-width: 300px", @focus=`
                     focusDate[i] = true;
                     focusMyDate = false;
-                  "
-                >
-                </q-input>
+                  `)
+              .date-picker.row.flex.flex-center(v-show="focusDate[i]")
+                q-date(v-model="c.date")
+                q-btn.confirm-date(color="secondary", @click="confirmS()") 確認
+            .small-space
+            .row.flex.flex-col.flex-start-center
+              q-btn(@click="goAssessment()", color="green margin", size="lg", rounded, icon="assessment") 學習風格檢測
+              h4.text-dark-green VARK學習風格
+              p
+            .small-space
+            q-form.flex.flex-start-center.fluid.row
+              label.text-gray.margin 視覺/圖象：
+                | {{ c.style_v }}
+              label.text-gray.margin 聽覺/語音：
+                | {{ c.style_a }}
+              label.text-gray.margin 閱讀/書寫：
+                | {{ c.style_r }}
+              label.text-gray.margin 實作/體驗：
+                | {{ c.style_k }}
+            .row.flex.flex-col.flex-start-center
+              h4.text-dark-green 多元智能
+              p
+            q-form.flex.flex-start-center.fluid.row
+              label.text-gray.margin 語言智能：
+                | {{ c.int_linguistic }}
+              label.text-gray.margin 數理邏輯智能：
+                | {{ c.int_logical }}
+              label.text-gray.margin 空間智能：
+                | {{ c.int_spatial }}
+              label.text-gray.margin 音樂智能：
+                | {{ c.int_musical }}
+              label.text-gray.margin 肢體動覺智能：
+                | {{ c.int_kinesthetic }}
+              label.text-gray.margin 人際智能：
+                | {{ c.int_interpersonal }}
+              label.text-gray.margin 內省智能：
+                | {{ c.int_intrapersonal }}
+              label.text-gray.margin 自然智能：
+                | {{ c.int_naturalist }}
+            .small-space
+            q-form.flex.flex-start-center.fluid.row
+              label.text-gray.margin 總合學習能力：
+                | {{ c.standard }}
+            q-form.flex.flex-start-center.fluid.row
+              .row.fluid
+                label.text-gray.flex.flex-center 首選時間
+                q-checkbox(toggle-order="ft", v-model="c.likeDay", label="上學時間")
+                q-checkbox(toggle-order="ft", v-model="c.likeNight", label="放學後和晚上")
+                q-checkbox(toggle-order="ft", v-model="c.likeWeekend", label="週末")
+              .row.fluid
+                label.text-gray.flex.flex-center 就讀學校
+                q-checkbox(toggle-indeterminate, toggle-order="ft", v-model="c.publicSchool", label="公立學校")
+                q-checkbox(toggle-indeterminate, toggle-order="ft", v-model="c.priviteSchool", label="私立學校")
+                q-checkbox(toggle-indeterminate, toggle-order="ft", v-model="c.homeSchool", label="在家自學")
+          .filler
+          .col-6.col-md-6.col-sm-4.col-xs-4.flex.flex-col.flex-start-center
+            q-img.big.avatar(:src="c.photoURL || ''")
+            q-btn.no-border.no-bg.text-dark-green(unelevated, @click="editP = true") 編輯
+            q-form.flex.flex-start-center.fluid(v-if="editP")
+              q-file(color="teal", filled, label="上傳大頭貼", accept="image/*", @input="uploadImage1($event, i)", :name="c.name + '_photoURL'")
+                template(v-slot:prepend)
+                  q-icon(name="cloud_upload")
+      .row
+        q-form
+          q-btn.margin.or-border.text-orange(unelevated, rounded, @click="cancel()", size="lg") 取消
+          q-btn.margin.or-back.text-white(unelevated, rounded, @click="submit()", size="lg") 更新資料
+          q-btn(@click="goAssessment()", color="green margin", size="lg", rounded, icon="assessment") 學習風格檢測
+      .row(v-if="me.provider == 'email'")
+        q-form.flex.flex-start-center.fluid
+          h4.text-left.text-dark-green.fluid 變更密碼
+        q-form.flex.flex-start-center.fluid
+          q-btn(color="secondary", @click="forgetPassWord()") 變更密碼
 
-                <div
-                  class="date-picker row flex flex-center"
-                  v-show="focusDate[i]"
-                >
-                  <q-date v-model="c.date" />
-                  <q-btn
-                    class="confirm-date"
-                    color="secondary"
-                    @click="confirmS()"
-                    >確認</q-btn
-                  >
-                </div>
-              </q-form>
-
-              <div class="small-space"></div>
-
-              <div class="row flex flex-col flex-start-center">
-                <q-btn
-                  @click="goAssessment()"
-                  color="green margin"
-                  size="lg"
-                  rounded
-                  icon="assessment"
-                  >學習風格檢測</q-btn
-                >
-
-                <h4 class="text-dark-green">VARK學習風格</h4>
-                <p>
-                  <!-- 請參考：<a
-                    href="https://vark-learn.com/vark%E5%95%8F%E5%8D%B7/"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >VARK學習風格線上測驗</a
-                  > -->
-                </p>
-              </div>
-
-              <div class="small-space"></div>
-
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin"
-                  >視覺/圖象：{{ c.style_v }}</label
-                >
-                <label class="text-gray margin"
-                  >聽覺/語音：{{ c.style_a }}</label
-                >
-                <label class="text-gray margin"
-                  >閱讀/書寫：{{ c.style_r }}</label
-                >
-                <label class="text-gray margin"
-                  >實作/體驗：{{ c.style_k }}</label
-                >
-              </q-form>
-
-              <div class="row flex flex-col flex-start-center">
-                <h4 class="text-dark-green">多元智能</h4>
-                <p>
-                  <!-- 請參考：<a
-                    href="https://www.tests.com.tw/mdsya.asp"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >多元智能線上測驗</a
-                  > -->
-                </p>
-              </div>
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin"
-                  >語言智能：{{ c.int_linguistic }}</label
-                >
-                <label class="text-gray margin"
-                  >數理邏輯智能：{{ c.int_logical }}</label
-                >
-                <label class="text-gray margin"
-                  >空間智能：{{ c.int_spatial }}</label
-                >
-                <label class="text-gray margin"
-                  >音樂智能：{{ c.int_musical }}</label
-                >
-                <label class="text-gray margin"
-                  >肢體動覺智能：{{ c.int_kinesthetic }}</label
-                >
-                <label class="text-gray margin"
-                  >人際智能：{{ c.int_interpersonal }}</label
-                >
-                <label class="text-gray margin"
-                  >內省智能：{{ c.int_intrapersonal }}</label
-                >
-                <label class="text-gray margin"
-                  >自然智能：{{ c.int_naturalist }}</label
-                >
-              </q-form>
-
-              <div class="small-space"></div>
-
-              <q-form class="flex flex-start-center fluid row">
-                <label class="text-gray margin"
-                  >總合學習能力：{{ c.standard }}</label
-                >
-              </q-form>
-
-              <q-form class="flex flex-start-center fluid row">
-                <div class="row fluid">
-                  <label class="text-gray flex flex-center">首選時間</label>
-                  <q-checkbox
-                    toggle-order="ft"
-                    v-model="c.likeDay"
-                    label="上學時間"
-                  />
-                  <q-checkbox
-                    toggle-order="ft"
-                    v-model="c.likeNight"
-                    label="放學後和晚上"
-                  />
-                  <q-checkbox
-                    toggle-order="ft"
-                    v-model="c.likeWeekend"
-                    label="週末"
-                  />
-                </div>
-
-                <div class="row fluid">
-                  <label class="text-gray flex flex-center">就讀學校</label>
-                  <q-checkbox
-                    toggle-indeterminate
-                    toggle-order="ft"
-                    v-model="c.publicSchool"
-                    label="公立學校"
-                  />
-                  <q-checkbox
-                    toggle-indeterminate
-                    toggle-order="ft"
-                    v-model="c.priviteSchool"
-                    label="私立學校"
-                  />
-                  <q-checkbox
-                    toggle-indeterminate
-                    toggle-order="ft"
-                    v-model="c.homeSchool"
-                    label="在家自學"
-                  />
-                </div>
-              </q-form>
-            </div>
-            <div class="filler"></div>
-            <div
-              class="col-6 col-md-6 col-sm-4 col-xs-4 flex flex-col flex-start-center"
-            >
-              <q-img class="big avatar" :src="c.photoURL || ''"></q-img>
-              <!-- --><q-btn
-                unelevated
-                class="no-border no-bg text-dark-green"
-                @click="editP = true"
-                >編輯</q-btn
-              >
-              <q-form class="flex flex-start-center fluid" v-if="editP">
-                <q-file
-                  color="teal"
-                  filled
-                  label="上傳大頭貼"
-                  accept="image/*"
-                  @input="uploadImage1($event, i)"
-                  :name="c.name + '_photoURL'"
-                >
-                  <template v-slot:prepend>
-                    <q-icon name="cloud_upload" />
-                  </template>
-                </q-file>
-              </q-form>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <q-form>
-            <q-btn
-              unelevated
-              rounded
-              class="margin or-border text-orange"
-              @click="cancel()"
-              size="lg"
-              >取消</q-btn
-            >
-
-            <q-btn
-              unelevated
-              rounded
-              class="margin or-back text-white"
-              @click="submit()"
-              size="lg"
-              >更新資料</q-btn
-            >
-
-            <q-btn
-              @click="goAssessment()"
-              color="green margin"
-              size="lg"
-              rounded
-              icon="assessment"
-              >學習風格檢測</q-btn
-            >
-          </q-form>
-        </div>
-        <div class="row" v-if="me.provider == 'email'">
-          <q-form class="flex flex-start-center fluid">
-            <h4 class="text-left text-dark-green fluid">變更密碼</h4>
-          </q-form>
-          <q-form class="flex flex-start-center fluid">
-            <q-btn color="secondary" @click="forgetPassWord()">變更密碼</q-btn>
-          </q-form>
-        </div>
-      </q-card>
-    </div>
-  </q-page>
 </template>
 
 <script lang="ts">
