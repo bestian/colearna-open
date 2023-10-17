@@ -176,6 +176,7 @@ module.exports = configure(function (/* ctx */) {
     pwa: {
       workboxMode: 'generateSW', // or 'injectManifest'
       injectPwaMetaTags: true,
+      skipWaiting: true,
       swFilename: 'sw.js',
       manifestFilename: 'manifest.json',
       useCredentialsForManifestTag: false,
